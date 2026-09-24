@@ -1,26 +1,49 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FCFAF6;
+  --foreground: #2B1A14;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+  --color-brand-primary: #542818;
+  --color-brand-dark: #32150C;
+  --color-brand-secondary: #6A3520;
+  --color-brand-gold: #C89532;
+  --color-brand-light-gold: #DDB45A;
+  --color-brand-cream: #F7F0E6;
+  --color-brand-offwhite: #FCFAF6;
+  --color-brand-text: #2B1A14;
+
+  --font-serif: var(--font-cormorant), "Times New Roman", Times, serif;
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Minimal selection styling */
+::selection {
+  background-color: #542818;
+  color: #F7F0E6;
+}
+
+/* Utility for thin gold lines */
+.gold-divider {
+  border-top: 1px solid rgba(200, 149, 50, 0.3);
+}
+
+/* Base heading styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 400;
 }
