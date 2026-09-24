@@ -127,7 +127,7 @@ export default function Header() {
             initial={{ opacity: 0, y: "-100%" }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "-100%" }}
-            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
             className="fixed inset-0 z-[60] bg-brand-cream flex flex-col overflow-y-auto"
           >
             <div className="flex justify-between items-center px-6 h-[80px] shrink-0">

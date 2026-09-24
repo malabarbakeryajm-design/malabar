@@ -1,13 +1,13 @@
 "use client";
 
 import { useRef } from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import ImageWithFallback from "@/components/ui/ImageWithFallback";
 
 export default function QualityPromise() {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -19,21 +19,21 @@ export default function QualityPromise() {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 15 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] },
+      transition: { duration: 0.9, ease: "easeOut" },
     },
   };
 
-  const lineVariants = {
+  const lineVariants: Variants = {
     hidden: { width: 0, opacity: 0 },
     visible: {
       width: "100%",
       opacity: 1,
-      transition: { duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.6 },
+      transition: { duration: 1.5, ease: "easeOut", delay: 0.6 },
     },
   };
 

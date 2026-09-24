@@ -13,7 +13,7 @@ export default function AboutHero() {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="flex items-center gap-4 mb-8"
           >
             <div className="w-12 h-[1px] bg-brand-gold" />
@@ -25,7 +25,7 @@ export default function AboutHero() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="font-serif text-5xl md:text-7xl lg:text-[85px] text-brand-dark leading-[1.05] mb-8"
           >
             From Malabar<br />
@@ -35,7 +35,7 @@ export default function AboutHero() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             className="text-brand-text/70 text-[15px] md:text-lg font-light leading-relaxed max-w-md"
           >
             Bringing the authentic tastes of our homeland to your table, every single day since our humble beginnings.
