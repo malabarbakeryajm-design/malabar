@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { companyData } from "@/data/company";
 
 export default function Footer() {
@@ -8,8 +9,10 @@ export default function Footer() {
         
         {/* Brand */}
         <div className="col-span-1 lg:col-span-2">
-          <Link href="/" className="font-serif text-3xl tracking-wide inline-block mb-6">
-            MALABAR BAKERY
+          <Link href="/" className="inline-block mb-6 transition-transform hover:scale-105">
+            <div className="relative w-[160px] h-[80px]">
+              <Image src="/images/logo.png" alt="Malabar Bakery Logo" fill className="object-contain object-left" sizes="160px" />
+            </div>
           </Link>
           <p className="text-brand-offwhite/70 max-w-sm text-sm leading-relaxed">
             {companyData.description}
