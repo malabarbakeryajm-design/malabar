@@ -35,27 +35,33 @@ export default function Header() {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Profile", href: "/profile" },
-    { name: "Our Story", href: "/about" },
+    { name: "About", href: "/about" },
     { 
       name: "Products", 
       href: "/products", 
       hasDropdown: true,
       dropdownItems: [
-        { name: "Kerala Breakfast Items", href: "/products?category=kerala-breakfast-items" },
-        { name: "Kerala Evening Snacks", href: "/products?category=kerala-evening-snacks" },
-        { name: "Bread & Rolls", href: "/products?category=bread-rolls" },
-        { name: "Biscuits & Cookies", href: "/products?category=biscuits-cookies" },
+        { name: "South Indian Snacks", href: "/products?category=south-indian-snacks" },
+        { name: "Snacks", href: "/products?category=snacks" },
+        { name: "Indian Bakery Items", href: "/products?category=indian-bakery-items" },
+        { name: "Breads", href: "/products?category=breads" },
+        { name: "Breakfast Products", href: "/products?category=breakfast-products" },
+        { name: "Sandwiches", href: "/products?category=sandwiches" },
+        { name: "Buns", href: "/products?category=buns" },
+        { name: "Rolls", href: "/products?category=rolls" },
         { name: "Pastries", href: "/products?category=pastries" },
+        { name: "Puffs", href: "/products?category=puffs" },
+        { name: "Biscuits", href: "/products?category=biscuits" },
+        { name: "Samosas", href: "/products?category=samosas" },
         { name: "Cakes", href: "/products?category=cakes" },
-        { name: "Sandwich & Croissants", href: "/products?category=sandwich-croissants" },
         { name: "Sweets", href: "/products?category=sweets" },
-        { name: "Roasteries", href: "/products?category=roasteries" },
-        { name: "Samosa & Spring Rolls", href: "/products?category=samosa-spring-rolls" },
+        { name: "Ready to Cook", href: "/products?category=ready-to-cook" },
       ]
     },
-    { name: "Testimonials", href: "/testimonials" },
-    { name: "Contact Us", href: "/contact" },
+    { name: "Business", href: "/business" },
+    { name: "Quality", href: "/quality" },
+    { name: "Careers", href: "/careers" },
+    { name: "Contact", href: "/contact" },
   ];
 
   const isVisible = isHome ? isScrolledPastHero : true;
@@ -102,10 +108,10 @@ export default function Header() {
               </div>
             ))}
             <Link 
-              href="/products" 
+              href="/business" 
               className="ml-2 text-[11px] tracking-widest uppercase bg-brand-dark text-brand-offwhite rounded-full px-7 py-2.5 transition-colors hover:bg-brand-primary flex items-center gap-2 whitespace-nowrap"
             >
-              Explore Products
+              Become a Partner
             </Link>
           </nav>
 
@@ -173,11 +179,11 @@ export default function Header() {
                 </div>
               ))}
               <Link 
-                href="/products"
+                href="/business"
                 className="mt-4 text-sm tracking-widest uppercase border border-brand-text rounded-full text-brand-text px-8 py-3 hover:bg-brand-text hover:text-brand-cream transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Explore Products
+                Become a Partner
               </Link>
             </div>
           </motion.div>

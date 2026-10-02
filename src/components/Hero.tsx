@@ -41,19 +41,19 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="font-serif text-5xl md:text-7xl lg:text-8xl text-brand-offwhite leading-tight mb-6 max-w-3xl"
+          className="font-serif text-5xl md:text-7xl lg:text-8xl text-brand-offwhite leading-tight mb-6 max-w-4xl"
         >
-          Crafted with Heritage.<br />
-          Made for Today.
+          A Heritage of Taste.<br />
+          A Tradition of Quality.
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-brand-offwhite/80 text-lg md:text-xl max-w-xl mb-10 font-light"
+          className="text-brand-offwhite/80 text-lg md:text-xl max-w-2xl mb-10 font-light"
         >
-          Bringing authentic bakery craftsmanship and timeless taste to the UAE.
+          Since 2005, Malabar Bakery has been bringing authentic flavours to customers and businesses across the UAE.
         </motion.p>
 
         <motion.div
@@ -66,16 +66,39 @@ export default function Hero() {
             href="/products" 
             className="bg-brand-offwhite text-brand-text px-8 py-4 text-xs tracking-widest uppercase hover:bg-brand-gold hover:text-brand-offwhite transition-colors duration-300"
           >
-            Explore Products
+            Explore Our Products
           </Link>
           <Link 
-            href="/about" 
-            className="text-brand-offwhite text-xs tracking-widest uppercase border-b border-brand-offwhite/30 pb-1 hover:border-brand-gold hover:text-brand-gold transition-colors duration-300"
+            href="/business" 
+            className="text-brand-offwhite text-xs tracking-widest uppercase border border-brand-offwhite px-8 py-4 hover:border-brand-gold hover:text-brand-gold hover:bg-brand-offwhite/10 transition-colors duration-300"
           >
-            Our Story
+            Become a Business Partner
           </Link>
         </motion.div>
       </div>
+
+      {/* Stats Bar */}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 1 }}
+        className="absolute bottom-0 left-0 w-full bg-brand-dark/80 backdrop-blur-sm border-t border-brand-offwhite/10 hidden md:block"
+      >
+        <div className="max-w-7xl mx-auto px-6 py-6 grid grid-cols-4 gap-4 divide-x divide-brand-offwhite/10">
+          <div className="text-center px-4">
+            <h4 className="text-brand-gold font-serif text-xl lg:text-2xl mb-1">Established 2005</h4>
+          </div>
+          <div className="text-center px-4">
+            <h4 className="text-brand-gold font-serif text-xl lg:text-2xl mb-1">100+ Products</h4>
+          </div>
+          <div className="text-center px-4">
+            <h4 className="text-brand-gold font-serif text-xl lg:text-2xl mb-1">500,000+ Items Daily</h4>
+          </div>
+          <div className="text-center px-4">
+            <h4 className="text-brand-gold font-serif text-xl lg:text-2xl mb-1">200+ Team Members</h4>
+          </div>
+        </div>
+      </motion.div>
 
       {/* Scroll indicator */}
       <motion.div 

@@ -1,24 +1,18 @@
 export const categories = [
-  {
-    id: "all",
-    name: "All",
-  },
-  {
-    id: "bread-rolls",
-    name: "Bread & Rolls",
-    description: "Freshly baked daily, with the perfect crust and soft interior.",
-    image: "/images/bread-category.jpg"
-  },
-  {
-    id: "biscuits-cookies",
-    name: "Biscuits & Cookies",
-    description: "Crispy, buttery, and perfect for your tea or coffee.",
-    image: "/images/biscuits-category.jpg"
-  },
-  {
-    id: "cakes-pastries",
-    name: "Cakes & Pastries",
-    description: "Delicate and rich, crafted for everyday celebrations.",
-    image: "/images/cakes-category.jpg"
-  }
+  { id: "all", name: "All" },
+  { id: "south-indian-snacks", name: "South Indian Snacks", description: "Authentic and crispy traditional snacks.", image: "/images/south-indian-snacks.jpg" },
+  { id: "snacks", name: "Snacks", description: "Perfect bites for any time of the day.", image: "/images/snacks.jpg" },
+  { id: "indian-bakery-items", name: "Indian Bakery Items", description: "Classic Indian bakery favorites.", image: "/images/indian-bakery.jpg" },
+  { id: "breads", name: "Breads", description: "Freshly baked daily, perfect crust and soft interior.", image: "/images/bread-category.jpg" },
+  { id: "breakfast-products", name: "Breakfast Products", description: "Start your day with our authentic breakfast range.", image: "/images/breakfast.jpg" },
+  { id: "sandwiches", name: "Sandwiches", description: "Freshly prepared and ready to eat.", image: "/images/sandwiches.jpg" },
+  { id: "buns", name: "Buns", description: "Soft, fluffy, and freshly baked.", image: "/images/buns.jpg" },
+  { id: "rolls", name: "Rolls", description: "Deliciously soft rolls for every occasion.", image: "/images/rolls.jpg" },
+  { id: "pastries", name: "Pastries", description: "Delicate and rich, crafted for celebrations.", image: "/images/pastries.jpg" },
+  { id: "puffs", name: "Puffs", description: "Flaky, golden puffs with savory fillings.", image: "/images/puffs.jpg" },
+  { id: "biscuits", name: "Biscuits", description: "Crispy, buttery, and perfect for your tea.", image: "/images/biscuits-category.jpg" },
+  { id: "samosas", name: "Samosas", description: "Crispy outside, flavorful inside.", image: "/images/samosas.jpg" },
+  { id: "cakes", name: "Cakes", description: "Beautifully baked cakes for every occasion.", image: "/images/cakes-category.jpg" },
+  { id: "sweets", name: "Sweets", description: "Traditional sweets to brighten your day.", image: "/images/sweets.jpg" },
+  { id: "ready-to-cook", name: "Ready to Cook", description: "Convenient and authentic ready-to-cook items.", image: "/images/ready-to-cook.jpg" },
 ];

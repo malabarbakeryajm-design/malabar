@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { products } from "@/data/products";
 import { categories } from "@/data/categories";
+import { companyData } from "@/data/company";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
@@ -67,16 +68,65 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
               {product.name}
             </h1>
             
-            <p className="text-brand-text/80 text-lg font-light leading-relaxed mb-12">
+            <p className="text-brand-text/80 text-lg font-light leading-relaxed mb-10">
               {product.fullDescription || product.description}
             </p>
+
+            <div className="grid grid-cols-2 gap-4 mb-12 py-6 border-y border-brand-text/10">
+              {product.packSize && (
+                <div>
+                  <span className="block text-xs uppercase tracking-widest text-brand-secondary mb-1">Pack Size</span>
+                  <span className="text-brand-dark font-medium">{product.packSize}</span>
+                </div>
+              )}
+              {product.weight && (
+                <div>
+                  <span className="block text-xs uppercase tracking-widest text-brand-secondary mb-1">Weight</span>
+                  <span className="text-brand-dark font-medium">{product.weight}</span>
+                </div>
+              )}
+              {product.shelfLife && (
+                <div>
+                  <span className="block text-xs uppercase tracking-widest text-brand-secondary mb-1">Shelf Life</span>
+                  <span className="text-brand-dark font-medium">{product.shelfLife}</span>
+                </div>
+              )}
+              {product.storageCondition && (
+                <div>
+                  <span className="block text-xs uppercase tracking-widest text-brand-secondary mb-1">Storage</span>
+                  <span className="text-brand-dark font-medium">{product.storageCondition}</span>
+                </div>
+              )}
+              {product.productType && (
+                <div>
+                  <span className="block text-xs uppercase tracking-widest text-brand-secondary mb-1">Product Type</span>
+                  <span className="text-brand-dark font-medium">{product.productType}</span>
+                </div>
+              )}
+              {product.vegetarian !== undefined && (
+                <div>
+                  <span className="block text-xs uppercase tracking-widest text-brand-secondary mb-1">Dietary</span>
+                  <span className="text-brand-dark font-medium">{product.vegetarian ? "Vegetarian" : "Non-Vegetarian"}</span>
+                </div>
+              )}
+            </div>
             
-            <Link 
-              href="/contact"
-              className="inline-block self-start bg-brand-dark text-brand-cream px-10 py-4 text-xs tracking-[0.18em] uppercase hover:bg-brand-primary transition-colors duration-300"
-            >
-              Enquire Now
-            </Link>
+            <div className="flex flex-col sm:flex-row items-center gap-4">
+              <Link 
+                href="/contact"
+                className="w-full text-center sm:w-auto bg-brand-dark text-brand-cream px-8 py-4 text-xs tracking-[0.15em] uppercase hover:bg-brand-primary transition-colors duration-300"
+              >
+                Enquire About This Product
+              </Link>
+              <a 
+                href={`https://wa.me/${companyData.whatsapp}?text=Hello Malabar Bakery, I would like more information about this product: ${product.name}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full text-center sm:w-auto border border-brand-dark text-brand-dark px-8 py-4 text-xs tracking-[0.15em] uppercase hover:bg-brand-dark hover:text-brand-cream transition-colors duration-300"
+              >
+                WhatsApp Us
+              </a>
+            </div>
           </div>
         </div>
         

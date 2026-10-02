@@ -3,36 +3,60 @@ export const products = [
     id: "premium-milk-bread",
     slug: "premium-milk-bread",
     name: "Premium Milk Bread",
-    categoryId: "bread-rolls",
+    categoryId: "breads",
     description: "Our signature milk bread, soft and slightly sweet, perfect for morning toast.",
     fullDescription: "Baked fresh every morning using traditional methods and premium ingredients, our milk bread offers a delicate crumb and a soft, pillowy texture.",
-    image: "/images/product-milk-bread.jpg"
+    image: "/images/product-milk-bread.jpg",
+    packSize: "1 Loaf",
+    weight: "400g",
+    shelfLife: "4 Days",
+    storageCondition: "Store in a cool, dry place",
+    productType: "Bakery Item",
+    vegetarian: true
   },
   {
     id: "malabar-rusk",
     slug: "malabar-rusk",
     name: "Classic Malabar Rusk",
-    categoryId: "biscuits-cookies",
+    categoryId: "biscuits",
     description: "Twice-baked for the perfect crunch. A classic tea-time essential.",
     fullDescription: "A heritage recipe passed down through generations. Our rusks are twice-baked to achieve a golden, satisfying crunch that pairs perfectly with warm beverages.",
-    image: "/images/product-rusk.jpg"
+    image: "/images/product-rusk.jpg",
+    packSize: "1 Pack",
+    weight: "250g",
+    shelfLife: "3 Months",
+    storageCondition: "Store in an airtight container",
+    productType: "Dry Snack",
+    vegetarian: true
   },
   {
     id: "butter-cookies",
     slug: "butter-cookies",
     name: "Heritage Butter Cookies",
-    categoryId: "biscuits-cookies",
+    categoryId: "biscuits",
     description: "Melt-in-your-mouth butter cookies crafted with premium butter.",
     fullDescription: "Simple, elegant, and timeless. These butter cookies are made with a high ratio of premium butter for a rich, melt-in-the-mouth experience.",
-    image: "/images/product-cookies.jpg"
+    image: "/images/product-cookies.jpg",
+    packSize: "1 Box",
+    weight: "200g",
+    shelfLife: "2 Months",
+    storageCondition: "Store in a cool, dry place",
+    productType: "Confectionery",
+    vegetarian: true
   },
   {
     id: "artisan-croissant",
     slug: "artisan-croissant",
     name: "Artisan Croissant",
-    categoryId: "cakes-pastries",
+    categoryId: "pastries",
     description: "Flaky, buttery layers baked to golden perfection.",
     fullDescription: "Our croissants are laminated meticulously to create beautiful, crisp layers outside while remaining airy and soft inside.",
-    image: "/images/product-croissant.jpg"
+    image: "/images/product-croissant.jpg",
+    packSize: "1 Piece",
+    weight: "80g",
+    shelfLife: "2 Days",
+    storageCondition: "Keep refrigerated for extended freshness",
+    productType: "Pastry",
+    vegetarian: true
   }
 ];
