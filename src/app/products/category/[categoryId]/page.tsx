@@ -24,7 +24,8 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
     <div className="pt-[92px] bg-transparent min-h-screen relative">
       {/* Decorative background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-        <div className="absolute inset-0 bg-[url('/images/bakery-pattern-bg.webp')] bg-repeat opacity-[0.03] mix-blend-multiply"></div>
+        <div className="absolute inset-0 bg-[url('/images/hero.webp')] bg-cover bg-fixed bg-center"></div>
+        <div className="absolute inset-0 bg-brand-cream/85 backdrop-blur-sm"></div>
         <div className="absolute top-[10%] left-[-10%] w-[40%] h-[40%] bg-brand-gold/10 rounded-full blur-[120px]"></div>
         <div className="absolute bottom-[20%] right-[-5%] w-[30%] h-[30%] bg-brand-primary/5 rounded-full blur-[100px]"></div>
       </div>
