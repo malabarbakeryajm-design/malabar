@@ -28,8 +28,14 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
   const category = categories.find(c => c.id === product.categoryId);
 
   return (
-    <div className="pt-[92px] bg-brand-offwhite min-h-screen">
-      <div className="max-w-7xl mx-auto px-6 py-12 md:py-24">
+    <div className="pt-[92px] bg-transparent min-h-screen relative">
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+        <div className="absolute inset-0 bg-[url('/images/bakery-pattern-bg.webp')] bg-repeat opacity-[0.03] mix-blend-multiply"></div>
+        <div className="absolute top-[10%] right-[-10%] w-[40%] h-[40%] bg-brand-gold/10 rounded-full blur-[120px]"></div>
+        <div className="absolute bottom-[20%] left-[-5%] w-[30%] h-[30%] bg-brand-primary/5 rounded-full blur-[100px]"></div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-6 py-12 md:py-24 relative z-10">
         
         <div className="mb-12">
           <Link 
@@ -41,7 +47,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24">
-          <div className="relative aspect-square bg-brand-cream w-full">
+          <div className="relative aspect-[4/5] bg-brand-cream w-full overflow-hidden rounded-md border border-brand-text/5">
             {product.image ? (
               <Image 
                 src={product.image}

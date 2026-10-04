@@ -24,7 +24,7 @@ export default function CareersPage() {
       {/* Background Image Overlay */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-10 mix-blend-multiply pointer-events-none" 
-        style={{ backgroundImage: "url('/images/hero.jpg')" }}
+        style={{ backgroundImage: "url('/images/hero.webp')" }}
       />
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 py-20 md:py-32 text-center">

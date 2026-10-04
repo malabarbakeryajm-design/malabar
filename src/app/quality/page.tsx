@@ -15,7 +15,7 @@ export default function QualityPage() {
       <section className="relative py-24 md:py-32 bg-brand-dark text-brand-cream text-center overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-20">
            <Image 
-             src="/images/hero.jpg"
+             src="/images/hero.webp"
              alt="Bakery Quality"
              fill
              className="object-cover"
@@ -65,7 +65,7 @@ export default function QualityPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="relative aspect-[4/3] w-full rounded-lg overflow-hidden shadow-xl">
             <Image 
-              src="/images/quality/premium_ingredients.jpg"
+              src="/images/quality/premium_ingredients.webp"
               alt="Premium Ingredients"
               fill
               className="object-cover"
@@ -91,7 +91,7 @@ export default function QualityPage() {
           </div>
           <div className="relative aspect-[4/3] w-full rounded-lg overflow-hidden shadow-xl order-1 md:order-2">
             <Image 
-              src="/images/quality/masterful_craft.jpg"
+              src="/images/quality/masterful_craft.webp"
               alt="Masterful Baking Craft"
               fill
               className="object-cover"
@@ -103,7 +103,7 @@ export default function QualityPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="relative aspect-[4/3] w-full rounded-lg overflow-hidden shadow-xl">
             <Image 
-              src="/images/quality/building_trust.jpg"
+              src="/images/quality/building_trust.webp"
               alt="Building Trust"
               fill
               className="object-cover"

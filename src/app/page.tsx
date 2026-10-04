@@ -40,7 +40,7 @@ export default function Home() {
               {/* Need to provide image later, use a colored placeholder for now if no image is present */}
               <div className="w-full h-full bg-brand-secondary/20 flex items-center justify-center relative overflow-hidden">
                  <Image 
-                    src="/images/hero.jpg" // Using hero as a placeholder for the story image
+                    src="/images/hero.webp" // Using hero as a placeholder for the story image
                     alt="Baking process"
                     fill
                     className="object-cover"
@@ -71,7 +71,7 @@ export default function Home() {
       <section className="relative py-32 md:py-48 overflow-hidden bg-brand-dark">
         <div className="absolute inset-0 z-0 opacity-40">
            <Image 
-              src="/images/hero.jpg" // Placeholder for heritage image
+              src="/images/hero.webp" // Placeholder for heritage image
               alt="Malabar Heritage"
               fill
               className="object-cover"

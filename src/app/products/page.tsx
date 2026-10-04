@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { categories } from "@/data/categories";
-import { products } from "@/data/products";
 
 export const metadata = {
   title: "Bakery Products | Malabar Bakery UAE",
@@ -10,8 +9,14 @@ export const metadata = {
 
 export default function ProductsPage() {
   return (
-    <div className="pt-[92px] bg-brand-offwhite min-h-screen">
-      <div className="max-w-7xl mx-auto px-6 py-20 md:py-24">
+    <div className="pt-[92px] bg-transparent min-h-screen relative">
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+        <div className="absolute inset-0 bg-[url('/images/bakery-pattern-bg.webp')] bg-repeat opacity-[0.03] mix-blend-multiply"></div>
+        <div className="absolute top-[20%] left-[-10%] w-[40%] h-[40%] bg-brand-gold/10 rounded-full blur-[120px]"></div>
+        <div className="absolute bottom-[10%] right-[-5%] w-[30%] h-[30%] bg-brand-primary/5 rounded-full blur-[100px]"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 py-20 md:py-24 relative z-10">
         
         <div className="text-center mb-20">
           <p className="text-xs tracking-[0.18em] uppercase text-brand-secondary mb-4 font-semibold">
@@ -28,14 +33,12 @@ export default function ProductsPage() {
             Download Our Product Catalogue
           </a>
         </div>
-
-        {/* Categories / Filters could be added here in a client component */}
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
           {categories.filter(c => c.id !== "all").map((category) => (
             <Link 
               key={category.id}
-              href={`/products?category=${category.id}`}
+              href={`/products/category/${category.id}`}
               className="group block"
             >
               <div className="relative aspect-square mb-6 overflow-hidden bg-brand-cream border border-brand-text/5 shadow-sm">

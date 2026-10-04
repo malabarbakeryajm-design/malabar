@@ -45,7 +45,7 @@ export default function QualityPromise() {
       {/* Background Image */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-40 mix-blend-overlay"
-        style={{ backgroundImage: "url('/images/quality-bg.png')" }}
+        style={{ backgroundImage: "url('/images/quality-bg.webp')" }}
       />
       
       {/* Background Lighting & Texture */}

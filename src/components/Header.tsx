@@ -76,7 +76,7 @@ export default function Header() {
         <header className="bg-gradient-to-r from-brand-dark/85 from-[15%] to-brand-cream/95 to-[30%] backdrop-blur-md shadow-lg rounded-full px-6 lg:px-6 h-[72px] flex items-center justify-between lg:gap-12 border border-brand-text/5">
           <Link href="/" className="flex items-center pl-2 transition-transform hover:scale-105">
             <div className="relative w-[110px] h-[55px]">
-              <Image src="/images/logo.png" alt="Malabar Bakery Logo" fill className="object-contain" priority sizes="110px" />
+              <Image src="/images/logo.webp" alt="Malabar Bakery Logo" fill className="object-contain" priority sizes="110px" />
             </div>
           </Link>
 
@@ -139,7 +139,7 @@ export default function Header() {
             <div className="flex justify-between items-center px-6 h-[80px] shrink-0">
               <Link href="/" className="flex items-center" onClick={() => setIsMobileMenuOpen(false)}>
                 <div className="relative w-[130px] h-[65px]">
-                  <Image src="/images/logo.png" alt="Malabar Bakery Logo" fill className="object-contain" priority sizes="130px" />
+                  <Image src="/images/logo.webp" alt="Malabar Bakery Logo" fill className="object-contain" priority sizes="130px" />
                 </div>
               </Link>
               <button 

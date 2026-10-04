@@ -15,7 +15,7 @@ export default function Hero() {
         transition={{ duration: 1.5, ease: "easeOut" }}
       >
         <Image
-          src="/images/hero.jpg"
+          src="/images/hero.webp"
           alt="Premium artisan bakery products"
           fill
           priority

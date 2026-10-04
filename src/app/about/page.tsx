@@ -37,7 +37,7 @@ export default function AboutPage() {
             <div className="relative aspect-[4/3] w-full rounded-xl overflow-hidden shadow-2xl">
               <div className="absolute inset-0 bg-brand-dark/10 z-10 mix-blend-multiply rounded-xl" />
               <Image 
-                src="/images/about/history.jpg"
+                src="/images/about/history.webp"
                 alt="Malabar Bakery History"
                 fill
                 className="object-cover transition-transform duration-700 hover:scale-105"

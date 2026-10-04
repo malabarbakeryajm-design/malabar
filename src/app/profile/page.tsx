@@ -43,7 +43,7 @@ export default function ProfilePage() {
           <div className="order-1 lg:order-2 relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-2xl">
             <div className="absolute inset-0 bg-brand-dark/10 z-10 mix-blend-multiply rounded-xl" />
             <Image 
-              src="/images/about/facility.jpg"
+              src="/images/about/facility.webp"
               alt="Malabar Bakery Production Facility"
               fill
               className="object-cover transition-transform duration-700 hover:scale-105"

@@ -52,7 +52,7 @@ export default function AboutHero() {
         transition={{ duration: 1.5, ease: "easeOut" }}
       >
         <Image
-          src="/images/about/hero-split.jpg"
+          src="/images/about/hero-split.webp"
           alt="Bright modern bakery interior"
           fill
           priority

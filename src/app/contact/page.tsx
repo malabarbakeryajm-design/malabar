@@ -23,7 +23,7 @@ export default function ContactPage() {
       {/* Background Image */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-40 mix-blend-multiply" 
-        style={{ backgroundImage: "url('/images/contact/contact-bg.png')" }}
+        style={{ backgroundImage: "url('/images/contact/contact-bg.webp')" }}
       />
       <div className="absolute inset-0 z-0 bg-gradient-to-b from-brand-cream via-transparent to-brand-cream opacity-40" />
 
