@@ -10,8 +10,8 @@ export default function Footer() {
         {/* Brand */}
         <div className="col-span-1 lg:col-span-2">
           <Link href="/" className="inline-block mb-6 transition-transform hover:scale-105">
-            <div className="relative w-[160px] h-[80px]">
-              <Image src="/images/logo.webp" alt="Malabar Bakery Logo" fill className="object-contain object-left" sizes="160px" />
+            <div className="relative w-[260px] h-[130px]">
+              <Image src="/images/logo-transparent.webp" alt="Malabar Bakery Logo" fill className="object-contain object-left" sizes="260px" />
             </div>
           </Link>
           <p className="text-brand-gold text-sm tracking-[0.2em] uppercase font-medium mb-4">
