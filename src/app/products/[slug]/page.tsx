@@ -86,12 +86,12 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                   <span className="text-brand-dark font-medium">{product.packSize}</span>
                 </div>
               )}
-              {product.weight && (
-                <div>
-                  <span className="block text-xs uppercase tracking-widest text-brand-secondary mb-1">Weight</span>
-                  <span className="text-brand-dark font-medium">{product.weight}</span>
-                </div>
-              )}
+              <div>
+                <span className="block text-xs uppercase tracking-widest text-brand-secondary mb-1">Weight</span>
+                <span className="text-brand-dark font-medium">
+                  {product.weight && product.weight !== "N/A" ? product.weight : "50-150 grams"}
+                </span>
+              </div>
               {product.shelfLife && (
                 <div>
                   <span className="block text-xs uppercase tracking-widest text-brand-secondary mb-1">Shelf Life</span>
