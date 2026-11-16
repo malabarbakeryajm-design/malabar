@@ -25,7 +25,12 @@ export default function Hero() {
     if (!video || !container) return;
 
     video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
     video.pause();
+
+    // Explicitly load video on mobile Safari/Chrome to start pre-buffering
+    video.load();
 
     let targetTime = 0;
     let maxTimeReached = 0;
@@ -36,7 +41,7 @@ export default function Hero() {
 
     // Smooth forward-seek loop driven by requestAnimationFrame
     const updateLoop = () => {
-      if (video.readyState >= 2 && !isSeeking) {
+      if (video.readyState >= 1 && !isSeeking) {
         const diff = targetTime - video.currentTime;
         if (diff > 0.005) {
           isSeeking = true;
@@ -65,6 +70,8 @@ export default function Hero() {
 
     const handleSeeked = () => {
       isSeeking = false;
+      // Mark video loaded once first frame is sought/rendered
+      setIsVideoLoaded(true);
     };
     video.addEventListener("seeked", handleSeeked);
 
@@ -94,18 +101,33 @@ export default function Hero() {
       handleScroll();
     };
 
-    if (video.readyState >= 2) {
+    if (video.readyState >= 1) {
       setIsVideoLoaded(true);
       handleScroll();
     } else {
+      video.addEventListener("loadeddata", handleReady, { once: true });
       video.addEventListener("canplay", handleReady, { once: true });
       video.addEventListener("loadedmetadata", handleReady, { once: true });
     }
 
+    // Touch/interaction unlocking for mobile iOS Safari & Android Chrome power-saver mode
+    const unlockMobilePlayback = () => {
+      if (video.paused && video.currentTime === 0) {
+        // Attempt a micro-play and immediate pause to wake up the hardware decoder
+        video.play().then(() => {
+          video.pause();
+          handleScroll();
+        }).catch(() => {});
+      }
+    };
+    window.addEventListener("touchstart", unlockMobilePlayback, { once: true, passive: true });
+
     return () => {
       cancelAnimationFrame(animId);
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("touchstart", unlockMobilePlayback);
       video.removeEventListener("seeked", handleSeeked);
+      video.removeEventListener("loadeddata", handleReady);
       video.removeEventListener("canplay", handleReady);
       video.removeEventListener("loadedmetadata", handleReady);
     };
