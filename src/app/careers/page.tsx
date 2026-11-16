@@ -19,13 +19,14 @@ export default function CareersPage() {
   };
 
   return (
-    <div className="relative pt-[92px] bg-transparent min-h-screen overflow-hidden">
+    <div className="relative pt-[92px] bg-brand-cream min-h-screen overflow-hidden">
       
       {/* Background Image Overlay */}
       <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-10 mix-blend-multiply pointer-events-none" 
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-45 pointer-events-none" 
         style={{ backgroundImage: "url('/images/hero.webp')" }}
       />
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-brand-cream/60 via-transparent to-brand-cream/90 pointer-events-none" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 py-20 md:py-32 text-center">
         
@@ -49,7 +50,7 @@ export default function CareersPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="bg-brand-cream p-8 md:p-12 text-left shadow-sm max-w-2xl mx-auto"
+          className="bg-brand-offwhite/90 backdrop-blur-md p-8 md:p-12 text-left shadow-xl rounded-2xl border border-brand-text/10 max-w-2xl mx-auto"
         >
           <h3 className="font-serif text-3xl text-brand-dark mb-4">Apply Now</h3>
           <p className="text-brand-text/70 mb-8 text-sm">Please fill out the form below. For your CV, please email it directly to {companyData.email} with your name in the subject line.</p>
