@@ -43,7 +43,6 @@ export default function Header() {
       dropdownItems: [
         { name: "South Indian Snacks", href: "/products/category/south-indian-snacks" },
         { name: "Snacks", href: "/products/category/snacks" },
-        { name: "Indian Bakery Items", href: "/products/category/indian-bakery-items" },
         { name: "Breads", href: "/products/category/breads" },
         { name: "Breakfast Products", href: "/products/category/breakfast-products" },
         { name: "Sandwiches", href: "/products/category/sandwiches" },
@@ -93,16 +92,19 @@ export default function Header() {
                 </Link>
 
                 {link.hasDropdown && link.dropdownItems && (
-                  <div className="absolute top-[85%] left-1/2 -translate-x-1/2 w-64 bg-brand-offwhite shadow-xl py-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 flex flex-col z-50 rounded-2xl border border-brand-text/5">
-                    {link.dropdownItems.map((item) => (
-                      <Link 
-                        key={item.name} 
-                        href={item.href}
-                        className="px-6 py-2.5 text-sm text-brand-text/80 hover:bg-brand-cream hover:text-brand-gold transition-colors font-medium"
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
+                  <div className="absolute top-[85%] left-1/2 -translate-x-1/2 w-[440px] bg-brand-offwhite shadow-2xl p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 z-50 rounded-2xl border border-brand-text/10">
+                    <div className="grid grid-cols-2 gap-x-2 gap-y-1">
+                      {link.dropdownItems.map((item) => (
+                        <Link 
+                          key={item.name} 
+                          href={item.href}
+                          className="px-3.5 py-2 text-xs text-brand-text/80 hover:bg-brand-cream hover:text-brand-gold rounded-lg transition-colors font-medium flex items-center justify-between group/item"
+                        >
+                          <span>{item.name}</span>
+                          <span className="text-[10px] text-brand-gold opacity-0 group-hover/item:opacity-100 transition-opacity">→</span>
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>
