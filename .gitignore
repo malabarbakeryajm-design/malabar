@@ -25,6 +25,8 @@
 *.pem
 /TensorPix*.mp4
 final TensorPix - Add_uploadedp.mp4
+/*.PNG
+/*.png
 
 # debug
 npm-debug.log*

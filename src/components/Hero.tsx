@@ -10,6 +10,14 @@ export default function Hero() {
   const videoWrapperRef = useRef<HTMLDivElement>(null);
 
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const [videoSrc, setVideoSrc] = useState("/videos/hero-1080p-gop1.mp4");
+
+  useEffect(() => {
+    // Choose lightweight 720p on mobile to prevent hardware decoder crash/hang
+    if (typeof window !== "undefined" && window.innerWidth < 768) {
+      setVideoSrc("/videos/hero-720p-gop1.mp4");
+    }
+  }, []);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -28,13 +36,18 @@ export default function Hero() {
 
     // Smooth forward-seek loop driven by requestAnimationFrame
     const updateLoop = () => {
-      if (video.readyState >= 1 && !isSeeking) {
+      // Check readyState to prevent seeking on unloaded video or crashing mobile decoder
+      if (video.readyState >= 2 && !isSeeking) {
         const diff = targetTime - video.currentTime;
         if (diff > 0.005) {
           isSeeking = true;
-          // Step towards target smoothly
+          // Step smoothly towards target
           const next = Math.min(targetTime, video.currentTime + Math.max(0.04, diff * 0.25));
-          video.currentTime = next;
+          try {
+            video.currentTime = next;
+          } catch {
+            isSeeking = false;
+          }
         }
       }
 
@@ -59,7 +72,8 @@ export default function Hero() {
     // Scroll progress handler: maps scroll position to video timeline (Forward only)
     const handleScroll = () => {
       const rect = container.getBoundingClientRect();
-      const totalScrollable = container.offsetHeight - window.innerHeight;
+      const viewportHeight = window.innerHeight;
+      const totalScrollable = container.offsetHeight - viewportHeight;
       if (totalScrollable <= 0) return;
 
       const currentScrolled = -rect.top;
@@ -67,8 +81,6 @@ export default function Hero() {
       const calculatedTime = progress * duration();
 
       // FORWARD SCROLLING ONLY:
-      // Video only advances forward as you scroll down.
-      // Scrolling up will never rewind or reverse the video.
       if (calculatedTime > maxTimeReached) {
         maxTimeReached = calculatedTime;
         targetTime = calculatedTime;
@@ -78,33 +90,34 @@ export default function Hero() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
 
-    if (video.readyState >= 1) {
+    const handleReady = () => {
+      setIsVideoLoaded(true);
+      handleScroll();
+    };
+
+    if (video.readyState >= 2) {
       setIsVideoLoaded(true);
       handleScroll();
     } else {
-      video.addEventListener(
-        "loadedmetadata",
-        () => {
-          setIsVideoLoaded(true);
-          handleScroll();
-        },
-        { once: true }
-      );
+      video.addEventListener("canplay", handleReady, { once: true });
+      video.addEventListener("loadedmetadata", handleReady, { once: true });
     }
 
     return () => {
       cancelAnimationFrame(animId);
       window.removeEventListener("scroll", handleScroll);
       video.removeEventListener("seeked", handleSeeked);
+      video.removeEventListener("canplay", handleReady);
+      video.removeEventListener("loadedmetadata", handleReady);
     };
-  }, []);
+  }, [videoSrc]);
 
   return (
     <section ref={containerRef} className="relative w-full h-[380vh] bg-brand-dark">
-      {/* Pinned Sticky Viewport */}
+      {/* Pinned Sticky Viewport with Mobile dynamic viewport height support */}
       <div
         ref={stickyRef}
-        className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center"
+        className="sticky top-0 h-screen h-[100dvh] w-full overflow-hidden flex items-center justify-center bg-brand-dark"
       >
         {/* Fallback Poster Image */}
         <div
@@ -122,7 +135,7 @@ export default function Hero() {
           />
         </div>
 
-        {/* 1080p All-Intra Smooth Scrub Video */}
+        {/* Smooth Scrub Video */}
         <div
           ref={videoWrapperRef}
           className="absolute inset-0 w-full h-full will-change-transform z-0"
@@ -130,9 +143,12 @@ export default function Hero() {
         >
           <video
             ref={videoRef}
-            src="/videos/hero-1080p-gop1.mp4"
+            key={videoSrc}
+            src={videoSrc}
             muted
             playsInline
+            webkit-playsinline="true"
+            x5-playsinline="true"
             preload="auto"
             tabIndex={-1}
             aria-hidden="true"
