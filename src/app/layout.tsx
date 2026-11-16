@@ -19,9 +19,26 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://malabarbakery.ae"),
   title: "Malabar Bakery LLC | Premium Bakery in UAE",
   description: "Malabar Bakery LLC brings authentic bakery craftsmanship and timeless taste to the UAE.",
   keywords: ["bakery", "UAE", "Malabar Bakery", "premium bakery", "bread", "pastries"],
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png", sizes: "32x32" }
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" }
+    ],
+    shortcut: ["/favicon.ico"]
+  },
+  manifest: "/manifest.json",
+  openGraph: {
+    title: "Malabar Bakery LLC | Premium Bakery in UAE",
+    description: "Taste. Tradition. Trust. Serving authentic bakery items across the UAE.",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Malabar Bakery LLC" }]
+  }
 };
 
 export default function RootLayout({
