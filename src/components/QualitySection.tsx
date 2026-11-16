@@ -36,8 +36,6 @@ export default function QualitySection() {
     <section className="relative py-20 md:py-[120px] px-6 bg-[#542818] overflow-hidden">
       {/* Subtle radial lighting effect */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(200,149,50,0.06)_0%,transparent_60%)] pointer-events-none" />
-      {/* Optional: Film grain texture (using a CSS pattern or simple pseudo element) */}
-      <div className="absolute inset-0 opacity-[0.02] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] pointer-events-none" />
 
       <motion.div
         variants={containerVariants}

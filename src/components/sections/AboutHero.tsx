@@ -18,9 +18,8 @@ export default function AboutHero() {
             alt="Malabar Bakery Traditional Sweets Background Mobile"
             fill
             priority
-            quality={100}
-            unoptimized
-            sizes="100vw"
+            quality={85}
+            sizes="(max-width: 768px) 100vw, 1px"
             className="object-cover object-bottom"
           />
         </div>
@@ -32,8 +31,7 @@ export default function AboutHero() {
             alt="Malabar Bakery Traditional Sweets Background Desktop"
             fill
             priority
-            quality={100}
-            unoptimized
+            quality={85}
             sizes="100vw"
             className="object-cover object-center"
           />

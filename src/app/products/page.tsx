@@ -11,7 +11,14 @@ export default function ProductsPage() {
   return (
     <div className="pt-[92px] bg-transparent min-h-screen relative">
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-        <div className="absolute inset-0 bg-[url('/images/hero.webp')] bg-cover bg-fixed bg-center"></div>
+        <Image 
+          src="/images/hero.webp"
+          alt="Products Background"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
         <div className="absolute inset-0 bg-brand-cream/85 backdrop-blur-sm"></div>
         <div className="absolute top-[20%] left-[-10%] w-[40%] h-[40%] bg-brand-gold/10 rounded-full blur-[120px]"></div>
         <div className="absolute bottom-[10%] right-[-5%] w-[30%] h-[30%] bg-brand-primary/5 rounded-full blur-[100px]"></div>

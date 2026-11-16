@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { companyData } from "@/data/company";
 
 export default function ContactPage() {
@@ -21,11 +22,17 @@ export default function ContactPage() {
     <div className="relative pt-[92px] bg-brand-cream min-h-screen overflow-hidden">
       
       {/* Background Image */}
-      <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-40 mix-blend-multiply" 
-        style={{ backgroundImage: "url('/images/contact/contact-bg.webp')" }}
-      />
-      <div className="absolute inset-0 z-0 bg-gradient-to-b from-brand-cream via-transparent to-brand-cream opacity-40" />
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <Image 
+          src="/images/contact/contact-bg.webp"
+          alt="Contact Malabar Bakery Background"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center opacity-40 mix-blend-multiply"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-cream via-transparent to-brand-cream opacity-40" />
+      </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 md:py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">

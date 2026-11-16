@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { companyData } from "@/data/company";
 
@@ -21,12 +22,18 @@ export default function CareersPage() {
   return (
     <div className="relative pt-[92px] bg-brand-cream min-h-screen overflow-hidden">
       
-      {/* Background Image Overlay */}
-      <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-45 pointer-events-none" 
-        style={{ backgroundImage: "url('/images/hero.webp')" }}
-      />
-      <div className="absolute inset-0 z-0 bg-gradient-to-b from-brand-cream/60 via-transparent to-brand-cream/90 pointer-events-none" />
+      {/* Background Image Overlay with Next/Image priority */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <Image 
+          src="/images/hero.webp"
+          alt="Malabar Bakery Artisanal Table Background"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center opacity-45"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-cream/60 via-transparent to-brand-cream/90" />
+      </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 py-20 md:py-32 text-center">
         

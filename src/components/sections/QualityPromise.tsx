@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 import ImageWithFallback from "@/components/ui/ImageWithFallback";
 
@@ -43,17 +44,22 @@ export default function QualityPromise() {
       className="relative flex items-center justify-center overflow-hidden h-screen w-full py-[100px] px-6 md:py-0 bg-[#542818]"
     >
       {/* Background Image */}
-      <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-40 mix-blend-overlay"
-        style={{ backgroundImage: "url('/images/quality-bg.webp')" }}
-      />
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <Image
+          src="/images/quality-bg.webp"
+          alt="Quality Background"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center opacity-40 mix-blend-overlay"
+        />
+      </div>
       
       {/* Background Lighting & Texture */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(200,149,50,0.06),transparent_60%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(200,149,50,0.06),transparent_60%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(84,40,24,0),rgba(40,20,10,0.4)_100%)]" />
-        <div className="absolute inset-0 opacity-[0.02] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-overlay" />
       </div>
 
       {/* Decorative Wheat SVG (Background) */}
