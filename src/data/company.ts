@@ -16,8 +16,8 @@ export const companyData = {
   email: "info@malabarbakery.ae",
   address: "Ajman, UAE",
   socials: {
-    instagram: "https://instagram.com/malabarbakery",
-    facebook: "https://facebook.com/malabarbakery",
-    linkedin: "https://linkedin.com/company/malabarbakery"
+    instagram: "https://www.instagram.com/malabarbakeryllc",
+    facebook: "https://www.facebook.com/malabarbakery.ae/",
+    linkedin: "https://www.linkedin.com/company/133993971"
   }
 };
