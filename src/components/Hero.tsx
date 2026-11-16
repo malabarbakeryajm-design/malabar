@@ -10,12 +10,12 @@ export default function Hero() {
   const videoWrapperRef = useRef<HTMLDivElement>(null);
 
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-  const [videoSrc, setVideoSrc] = useState("/videos/hero-1080p-gop1.mp4");
+  const [videoSrc, setVideoSrc] = useState("/videos/hero-scrub-fast.mp4");
 
   useEffect(() => {
-    // Choose lightweight 720p on mobile to prevent hardware decoder crash/hang
+    // Select fast 720p stream on mobile for instant buffering and smooth scrubbing
     if (typeof window !== "undefined" && window.innerWidth < 768) {
-      setVideoSrc("/videos/hero-720p-gop1.mp4");
+      setVideoSrc("/videos/hero-scrub-mobile.mp4");
     }
   }, []);
 
@@ -36,13 +36,12 @@ export default function Hero() {
 
     // Smooth forward-seek loop driven by requestAnimationFrame
     const updateLoop = () => {
-      // Check readyState to prevent seeking on unloaded video or crashing mobile decoder
       if (video.readyState >= 2 && !isSeeking) {
         const diff = targetTime - video.currentTime;
         if (diff > 0.005) {
           isSeeking = true;
           // Step smoothly towards target
-          const next = Math.min(targetTime, video.currentTime + Math.max(0.04, diff * 0.25));
+          const next = Math.min(targetTime, video.currentTime + Math.max(0.04, diff * 0.28));
           try {
             video.currentTime = next;
           } catch {
@@ -51,7 +50,7 @@ export default function Hero() {
         }
       }
 
-      // Subtle dynamic camera depth
+      // Dynamic camera depth
       if (videoWrapperRef.current) {
         const dur = duration();
         const progress = dur > 0 ? maxTimeReached / dur : 0;
@@ -80,7 +79,7 @@ export default function Hero() {
       const progress = Math.max(0, Math.min(1, currentScrolled / totalScrollable));
       const calculatedTime = progress * duration();
 
-      // FORWARD SCROLLING ONLY:
+      // FORWARD SCROLLING ONLY
       if (calculatedTime > maxTimeReached) {
         maxTimeReached = calculatedTime;
         targetTime = calculatedTime;
@@ -121,7 +120,7 @@ export default function Hero() {
       >
         {/* Fallback Poster Image */}
         <div
-          className={`absolute inset-0 z-0 transition-opacity duration-1000 ${
+          className={`absolute inset-0 z-0 transition-opacity duration-700 ${
             isVideoLoaded ? "opacity-0 pointer-events-none" : "opacity-100"
           }`}
         >
