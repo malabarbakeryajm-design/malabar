@@ -27,11 +27,11 @@ export default function AboutHero() {
         {/* Desktop Landscape Background (hidden on mobile) */}
         <div className="hidden md:block relative w-full h-full">
           <Image
-            src="/images/about/about-hero-sweets.webp"
+            src="/images/about/about-hero-clean.webp"
             alt="Malabar Bakery Traditional Sweets Background Desktop"
             fill
             priority
-            quality={85}
+            quality={95}
             sizes="100vw"
             className="object-cover object-center"
           />
