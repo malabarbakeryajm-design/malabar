@@ -97,11 +97,11 @@ export default function Footer() {
             </svg>
           </a>
 
-          {/* 4. Call Button */}
+          {/* 4. Call Button (Icon only) */}
           <a
             href="tel:+97167481251"
             aria-label="Call +971 67481251"
-            className="h-10 px-3.5 rounded-full border border-brand-gold/50 bg-[#B88643]/20 flex items-center gap-2 text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-all duration-300 group shadow-sm"
+            className="w-10 h-10 rounded-full border border-brand-gold/50 bg-[#B88643]/20 flex items-center justify-center text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-all duration-300 group shadow-sm"
           >
             <svg
               className="w-4 h-4 fill-currentColor group-hover:scale-110 transition-transform"
@@ -109,9 +109,6 @@ export default function Footer() {
             >
               <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-2.2 2.2a15.053 15.053 0 0 1-6.59-6.59l2.2-2.21a.96.96 0 0 0 .25-1.01A11.36 11.36 0 0 1 8.57 3.9c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.52c0-.55-.45-1-.99-1z" />
             </svg>
-            <span className="text-xs font-medium tracking-wide">
-              +971 67481251
-            </span>
           </a>
         </div>
       </div>
