@@ -20,18 +20,31 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  /* Let Lenis drive the scroll physics smoothly without conflict */
+  scroll-behavior: auto;
 }
 
 body {
   background-color: var(--background);
-  background-image: radial-gradient(circle at top right, rgba(200, 149, 50, 0.03), transparent 40%), 
-                    radial-gradient(circle at bottom left, rgba(84, 40, 24, 0.03), transparent 40%);
-  background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Pseudo-element background instead of background-attachment: fixed for 60-120fps scrolling */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  pointer-events: none;
+  background-image: radial-gradient(circle at top right, rgba(200, 149, 50, 0.03), transparent 40%), 
+                    radial-gradient(circle at bottom left, rgba(84, 40, 24, 0.03), transparent 40%);
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 /* Minimal selection styling */

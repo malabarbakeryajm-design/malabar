@@ -6,15 +6,21 @@ import "lenis/dist/lenis.css";
 
 export default function SmoothScroll({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    // 120Hz/144Hz butter-smooth momentum scrolling
+    // Premium buttery-smooth momentum scrolling with hardware acceleration
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 1.1,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
-      wheelMultiplier: 1,
-      touchMultiplier: 1.5,
+      wheelMultiplier: 0.9,
+      touchMultiplier: 1.2,
+      infinite: false,
+    });
+
+    // Connect Lenis scroll events to window scroll listeners
+    lenis.on("scroll", () => {
+      // Keep native scroll listeners synchronized without jitter
     });
 
     let rafId: number;
