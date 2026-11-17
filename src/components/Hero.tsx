@@ -13,7 +13,7 @@ export default function Hero() {
   const [videoSrc, setVideoSrc] = useState("/videos/hero-scrub-fast.mp4");
 
   useEffect(() => {
-    // Select fast 720p stream on mobile for instant buffering and smooth scrubbing
+    // Select portrait-optimized mobile stream on mobile devices
     if (typeof window !== "undefined" && window.innerWidth < 768) {
       setVideoSrc("/videos/hero-scrub-mobile.mp4");
     }
@@ -29,9 +29,6 @@ export default function Hero() {
     video.playsInline = true;
     video.pause();
 
-    // Explicitly load video on mobile Safari/Chrome to start pre-buffering
-    video.load();
-
     let targetTime = 0;
     let maxTimeReached = 0;
     let isSeeking = false;
@@ -39,16 +36,21 @@ export default function Hero() {
 
     const duration = () => video.duration || 10;
 
-    // Smooth forward-seek loop driven by requestAnimationFrame
+    // Direct, ultra-smooth seek step loop driven by requestAnimationFrame
     const updateLoop = () => {
       if (video.readyState >= 1 && !isSeeking) {
         const diff = targetTime - video.currentTime;
         if (diff > 0.005) {
           isSeeking = true;
-          // Step smoothly towards target
-          const next = Math.min(targetTime, video.currentTime + Math.max(0.04, diff * 0.28));
+          // Step towards target smoothly
+          const step = Math.max(0.04, diff * 0.35);
+          const next = Math.min(targetTime, video.currentTime + step);
           try {
-            video.currentTime = next;
+            if ("fastSeek" in video && typeof (video as any).fastSeek === "function") {
+              (video as any).fastSeek(next);
+            } else {
+              video.currentTime = next;
+            }
           } catch {
             isSeeking = false;
           }
@@ -70,7 +72,6 @@ export default function Hero() {
 
     const handleSeeked = () => {
       isSeeking = false;
-      // Mark video loaded once first frame is sought/rendered
       setIsVideoLoaded(true);
     };
     video.addEventListener("seeked", handleSeeked);
@@ -94,8 +95,8 @@ export default function Hero() {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
 
+    // Initial check and ready listener
     const handleReady = () => {
       setIsVideoLoaded(true);
       handleScroll();
@@ -110,22 +111,26 @@ export default function Hero() {
       video.addEventListener("loadedmetadata", handleReady, { once: true });
     }
 
-    // Touch/interaction unlocking for mobile iOS Safari & Android Chrome power-saver mode
-    const unlockMobilePlayback = () => {
+    // Proactive decoder unlock on mobile (fires on any early touch, pointer or scroll interaction)
+    const unlockDecoder = () => {
       if (video.paused && video.currentTime === 0) {
-        // Attempt a micro-play and immediate pause to wake up the hardware decoder
         video.play().then(() => {
           video.pause();
           handleScroll();
         }).catch(() => {});
       }
     };
-    window.addEventListener("touchstart", unlockMobilePlayback, { once: true, passive: true });
+
+    window.addEventListener("touchstart", unlockDecoder, { once: true, passive: true });
+    window.addEventListener("pointerdown", unlockDecoder, { once: true, passive: true });
+    window.addEventListener("wheel", unlockDecoder, { once: true, passive: true });
 
     return () => {
       cancelAnimationFrame(animId);
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("touchstart", unlockMobilePlayback);
+      window.removeEventListener("touchstart", unlockDecoder);
+      window.removeEventListener("pointerdown", unlockDecoder);
+      window.removeEventListener("wheel", unlockDecoder);
       video.removeEventListener("seeked", handleSeeked);
       video.removeEventListener("loadeddata", handleReady);
       video.removeEventListener("canplay", handleReady);
