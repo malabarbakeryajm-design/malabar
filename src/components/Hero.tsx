@@ -36,14 +36,25 @@ export default function Hero() {
 
     const duration = () => video.duration || 10;
 
+    // Timeout-guarded seeking to prevent decoder freeze/lag on slow or busy devices
+    let seekTimeout: NodeJS.Timeout | null = null;
+
     // Direct, ultra-smooth seek step loop driven by requestAnimationFrame
     const updateLoop = () => {
       if (video.readyState >= 1 && !isSeeking) {
         const diff = targetTime - video.currentTime;
         if (diff > 0.005) {
           isSeeking = true;
-          // Step towards target smoothly
-          const step = Math.max(0.04, diff * 0.35);
+
+          // Clear any dangling seek timeout
+          if (seekTimeout) clearTimeout(seekTimeout);
+          // Safety fallback: if hardware decoder drops the 'seeked' event, unlock after 120ms
+          seekTimeout = setTimeout(() => {
+            isSeeking = false;
+          }, 120);
+
+          // Step towards target smoothly with adaptive proportional stepping
+          const step = Math.max(0.04, diff * 0.4);
           const next = Math.min(targetTime, video.currentTime + step);
           try {
             if ("fastSeek" in video && typeof (video as any).fastSeek === "function") {
@@ -53,6 +64,7 @@ export default function Hero() {
             }
           } catch {
             isSeeking = false;
+            if (seekTimeout) clearTimeout(seekTimeout);
           }
         }
       }
@@ -71,6 +83,7 @@ export default function Hero() {
     animId = requestAnimationFrame(updateLoop);
 
     const handleSeeked = () => {
+      if (seekTimeout) clearTimeout(seekTimeout);
       isSeeking = false;
       setIsVideoLoaded(true);
     };
