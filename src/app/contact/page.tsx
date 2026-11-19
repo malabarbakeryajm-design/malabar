@@ -54,15 +54,21 @@ export default function ContactPage() {
                 <p className="text-brand-text/80 font-light">{companyData.address}</p>
               </div>
               <div>
-                <h3 className="font-serif text-2xl text-brand-dark mb-2">Email</h3>
-                <a href={`mailto:${companyData.email}`} className="text-brand-text/80 font-light hover:text-brand-gold transition-colors">
-                  {companyData.email}
+                <h3 className="font-serif text-2xl text-brand-dark mb-2">Telephone</h3>
+                <a href={`tel:${companyData.telephone.replace(/\s+/g, '')}`} className="text-brand-text/80 font-light hover:text-brand-gold transition-colors">
+                  {companyData.telephone}
                 </a>
               </div>
               <div>
-                <h3 className="font-serif text-2xl text-brand-dark mb-2">WhatsApp / Phone</h3>
-                <a href={`https://wa.me/971505330247`} target="_blank" rel="noopener noreferrer" className="text-brand-text/80 font-light hover:text-brand-gold transition-colors">
-                  {companyData.phone}
+                <h3 className="font-serif text-2xl text-brand-dark mb-2">Mobile / WhatsApp</h3>
+                <a href={`https://wa.me/${companyData.whatsapp}`} target="_blank" rel="noopener noreferrer" className="text-brand-text/80 font-light hover:text-brand-gold transition-colors">
+                  {companyData.mobile}
+                </a>
+              </div>
+              <div>
+                <h3 className="font-serif text-2xl text-brand-dark mb-2">Mail</h3>
+                <a href={`mailto:${companyData.email}`} className="text-brand-text/80 font-light hover:text-brand-gold transition-colors">
+                  {companyData.email}
                 </a>
               </div>
             </div>

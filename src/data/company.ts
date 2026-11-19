@@ -11,9 +11,11 @@ export const companyData = {
     employees: "200+",
     certifications: ["HACCP", "ISO"]
   },
+  telephone: "+971 6 7481251",
+  mobile: "+971 50 533 0247",
   phone: "+971 50 533 0247",
   whatsapp: "+971505330247",
-  email: "info@malabarbakery.ae",
+  email: "office@malabarbakery.ae",
   address: "Ajman, UAE",
   socials: {
     instagram: "https://www.instagram.com/malabarbakeryllc",

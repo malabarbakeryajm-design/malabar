@@ -38,11 +38,12 @@ export default function Footer() {
         {/* Contact */}
         <div>
           <h4 className="text-xs tracking-widest uppercase text-brand-gold mb-6">Contact</h4>
-          <ul className="space-y-4 text-sm text-brand-offwhite/80">
+          <ul className="space-y-3 text-sm text-brand-offwhite/80">
             <li>{companyData.address}</li>
-            <li><a href={`tel:${companyData.phone.replace(/\s+/g, '')}`} className="hover:text-brand-offwhite transition-colors">Phone: {companyData.phone}</a></li>
+            <li><a href={`tel:${companyData.telephone.replace(/\s+/g, '')}`} className="hover:text-brand-offwhite transition-colors">Telephone: {companyData.telephone}</a></li>
+            <li><a href={`tel:${companyData.mobile.replace(/\s+/g, '')}`} className="hover:text-brand-offwhite transition-colors">Mobile: {companyData.mobile}</a></li>
             <li><a href={`https://wa.me/${companyData.whatsapp}`} target="_blank" rel="noopener noreferrer" className="hover:text-brand-offwhite transition-colors">WhatsApp: +{companyData.whatsapp}</a></li>
-            <li><a href={`mailto:${companyData.email}`} className="hover:text-brand-offwhite transition-colors">Email: {companyData.email}</a></li>
+            <li><a href={`mailto:${companyData.email}`} className="hover:text-brand-offwhite transition-colors">Mail: {companyData.email}</a></li>
           </ul>
         </div>
 
