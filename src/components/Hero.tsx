@@ -30,7 +30,6 @@ export default function Hero() {
     video.pause();
 
     let targetTime = 0;
-    let maxTimeReached = 0;
     let isSeeking = false;
     let animId: number;
 
@@ -39,11 +38,11 @@ export default function Hero() {
     // Timeout-guarded seeking to prevent decoder freeze/lag on slow or busy devices
     let seekTimeout: NodeJS.Timeout | null = null;
 
-    // Direct, ultra-smooth seek step loop driven by requestAnimationFrame
+    // Direct, ultra-smooth bidirectional seek step loop driven by requestAnimationFrame
     const updateLoop = () => {
       if (video.readyState >= 1 && !isSeeking) {
         const diff = targetTime - video.currentTime;
-        if (diff > 0.005) {
+        if (Math.abs(diff) > 0.005) {
           isSeeking = true;
 
           // Clear any dangling seek timeout
@@ -53,9 +52,12 @@ export default function Hero() {
             isSeeking = false;
           }, 120);
 
-          // Step towards target smoothly with adaptive proportional stepping
-          const step = Math.max(0.04, diff * 0.4);
-          const next = Math.min(targetTime, video.currentTime + step);
+          // Step towards target smoothly forward or backward with proportional stepping
+          const step = Math.sign(diff) * Math.max(0.04, Math.abs(diff) * 0.4);
+          const next = diff > 0 
+            ? Math.min(targetTime, video.currentTime + step)
+            : Math.max(targetTime, video.currentTime + step);
+
           try {
             if ("fastSeek" in video && typeof (video as any).fastSeek === "function") {
               (video as any).fastSeek(next);
@@ -69,10 +71,10 @@ export default function Hero() {
         }
       }
 
-      // Dynamic camera depth
+      // Dynamic camera depth following current video playback progress
       if (videoWrapperRef.current) {
         const dur = duration();
-        const progress = dur > 0 ? maxTimeReached / dur : 0;
+        const progress = dur > 0 ? Math.max(0, Math.min(1, video.currentTime / dur)) : 0;
         const scale = 1.0 + progress * 0.08;
         videoWrapperRef.current.style.transform = `scale(${scale}) translateZ(0)`;
       }
@@ -89,7 +91,7 @@ export default function Hero() {
     };
     video.addEventListener("seeked", handleSeeked);
 
-    // Scroll progress handler: maps scroll position to video timeline (Forward only)
+    // Scroll progress handler: maps scroll position to video timeline (Bidirectional: forward & backward)
     const handleScroll = () => {
       const rect = container.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
@@ -100,11 +102,8 @@ export default function Hero() {
       const progress = Math.max(0, Math.min(1, currentScrolled / totalScrollable));
       const calculatedTime = progress * duration();
 
-      // FORWARD SCROLLING ONLY
-      if (calculatedTime > maxTimeReached) {
-        maxTimeReached = calculatedTime;
-        targetTime = calculatedTime;
-      }
+      // Bidirectional scrubbing: scrolls smoothly both downwards and upwards
+      targetTime = calculatedTime;
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
