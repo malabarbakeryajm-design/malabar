@@ -18,6 +18,9 @@ export default function LoadingScreen() {
     }
     return () => {
       document.body.style.overflow = "";
+      // When preloader unmounts / finishes, notify window and Lenis to resume and recalculate dimensions
+      window.dispatchEvent(new Event("resize"));
+      window.dispatchEvent(new Event("scroll"));
     };
   }, [loading]);
 

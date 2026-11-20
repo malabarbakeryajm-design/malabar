@@ -29,6 +29,11 @@ export default function Hero() {
     video.playsInline = true;
     video.pause();
 
+    // Explicitly load video to start pre-buffering
+    try {
+      video.load();
+    } catch {}
+
     let targetTime = 0;
     let isSeeking = false;
     let animId: number;
@@ -123,7 +128,7 @@ export default function Hero() {
       video.addEventListener("loadedmetadata", handleReady, { once: true });
     }
 
-    // Proactive decoder unlock on mobile (fires on any early touch, pointer or scroll interaction)
+    // Proactive decoder unlock on mobile & desktop (fires on any early touch, pointer, scroll or loading complete)
     const unlockDecoder = () => {
       if (video.paused && video.currentTime === 0) {
         video.play().then(() => {
@@ -136,10 +141,12 @@ export default function Hero() {
     window.addEventListener("touchstart", unlockDecoder, { once: true, passive: true });
     window.addEventListener("pointerdown", unlockDecoder, { once: true, passive: true });
     window.addEventListener("wheel", unlockDecoder, { once: true, passive: true });
+    window.addEventListener("resize", handleScroll, { passive: true });
 
     return () => {
       cancelAnimationFrame(animId);
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
       window.removeEventListener("touchstart", unlockDecoder);
       window.removeEventListener("pointerdown", unlockDecoder);
       window.removeEventListener("wheel", unlockDecoder);
