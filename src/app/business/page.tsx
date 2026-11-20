@@ -496,12 +496,13 @@ export default function BusinessPage() {
       </section>
 
       {/* =========================================================================
-          DISTRIBUTION & REACH SECTION (Panoramic Artwork Showcase)
+          DISTRIBUTION & REACH SECTION (Interactive Panoramic Visual with Card Hover Effects)
          ========================================================================= */}
-      <section className="relative w-full bg-[#FBF7F2] overflow-hidden border-t border-[#EAD8C5]/60">
+      <section className="relative w-full bg-[#FBF7F2] overflow-hidden border-t border-[#EAD8C5]/60 flex flex-col items-center">
         
-        {/* Full Interactive Panoramic Artwork */}
-        <div className="relative w-full aspect-[1024/524] min-h-[480px] sm:min-h-[580px] lg:min-h-[640px]">
+        {/* Full Interactive Panoramic Artwork Container */}
+        <div className="relative w-full max-w-[1536px] aspect-[1024/524] min-h-[480px] sm:min-h-[580px] lg:min-h-[660px]">
+          {/* Base Artwork Image */}
           <Image
             src="/images/distribution/distribution-bg.webp"
             alt="Malabar Bakery Daily Distribution Across UAE"
@@ -509,8 +510,49 @@ export default function BusinessPage() {
             priority
             quality={95}
             sizes="100vw"
-            className="object-cover object-center"
+            className="object-cover object-center select-none pointer-events-none"
           />
+
+          {/* Interactive Hover Cards Layer (Aligned over the 7 Emirate Cards) */}
+          <div className="absolute inset-0 z-10 pointer-events-none flex items-end">
+            <div className="w-full max-w-[94%] xl:max-w-[91%] mx-auto mb-[6%] sm:mb-[5%] md:mb-[4.5%]">
+              <div className="grid grid-cols-7 gap-1.5 sm:gap-2.5 md:gap-3 lg:gap-4 w-full">
+                {[
+                  { name: "Dubai", em: "DUBAI" },
+                  { name: "Abu Dhabi", em: "ABU DHABI" },
+                  { name: "Sharjah", em: "SHARJAH" },
+                  { name: "Ajman", em: "AJMAN" },
+                  { name: "Umm Al Quwain", em: "UMM AL QUWAIN" },
+                  { name: "Ras Al Khaimah", em: "RAS AL KHAIMAH" },
+                  { name: "Fujairah", em: "FUJAIRAH" },
+                ].map((item, idx) => (
+                  <motion.div
+                    key={item.em}
+                    whileHover={{ 
+                      y: -10, 
+                      scale: 1.05,
+                    }}
+                    transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                    className="pointer-events-auto cursor-pointer relative aspect-[1/1.32] w-full rounded-[14px] sm:rounded-[18px] md:rounded-[22px] transition-all duration-300 group"
+                  >
+                    {/* Hover Glow & Lift Reflection Outline */}
+                    <div className="absolute -inset-1 rounded-[16px] sm:rounded-[20px] md:rounded-[24px] bg-gradient-to-t from-[#B88643]/30 via-white/40 to-white/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-[0_16px_36px_rgba(184,134,67,0.3)] pointer-events-none" />
+                    
+                    {/* Delicate golden accent border on hover */}
+                    <div className="absolute inset-0 rounded-[14px] sm:rounded-[18px] md:rounded-[22px] border-2 border-transparent group-hover:border-[#B88643]/80 transition-colors duration-300 pointer-events-none z-10" />
+                    
+                    {/* Floating Tooltip Pill */}
+                    <div className="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none transform translate-y-2 group-hover:translate-y-0 z-20 whitespace-nowrap">
+                      <span className="bg-[#35180F] text-[#F8F1E8] text-[10px] sm:text-[11px] font-semibold tracking-wider uppercase px-3 py-1.5 rounded-full shadow-lg border border-[#B88643]/40 flex items-center gap-1.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#B88643] animate-pulse" />
+                        Daily Fresh Supply
+                      </span>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
 
       </section>
