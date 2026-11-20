@@ -53,7 +53,7 @@ export default function Hero() {
           }, 120);
 
           // Step towards target smoothly forward or backward with proportional stepping
-          const step = Math.sign(diff) * Math.max(0.04, Math.abs(diff) * 0.4);
+          const step = Math.sign(diff) * Math.max(0.03, Math.abs(diff) * 0.25);
           const next = diff > 0 
             ? Math.min(targetTime, video.currentTime + step)
             : Math.max(targetTime, video.currentTime + step);
@@ -157,12 +157,8 @@ export default function Hero() {
         ref={stickyRef}
         className="sticky top-0 h-screen h-[100dvh] w-full overflow-hidden flex items-center justify-center bg-brand-dark"
       >
-        {/* Fallback Poster Image */}
-        <div
-          className={`absolute inset-0 z-0 transition-opacity duration-700 ${
-            isVideoLoaded ? "opacity-0 pointer-events-none" : "opacity-100"
-          }`}
-        >
+        {/* High-Resolution Poster Layer (Always rendered behind the video so no brown/blank background ever flashes during scrub/seeking) */}
+        <div className="absolute inset-0 z-0">
           <Image
             src="/images/hero-poster.webp"
             alt="Malabar Bakery Cinematic"
@@ -176,7 +172,9 @@ export default function Hero() {
         {/* Smooth Scrub Video */}
         <div
           ref={videoWrapperRef}
-          className="absolute inset-0 w-full h-full will-change-transform z-0"
+          className={`absolute inset-0 w-full h-full will-change-transform z-[1] transition-opacity duration-500 ${
+            isVideoLoaded ? "opacity-100" : "opacity-0"
+          }`}
           style={{ transform: "scale(1) translate3d(0,0,0)" }}
         >
           <video
@@ -200,8 +198,8 @@ export default function Hero() {
         </div>
 
         {/* Subtle Cinematic Vignette */}
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/75 via-transparent to-brand-dark/40 pointer-events-none z-[1]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_55%,rgba(26,17,14,0.45)_100%)] pointer-events-none z-[1]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/75 via-transparent to-brand-dark/40 pointer-events-none z-[2]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_55%,rgba(26,17,14,0.45)_100%)] pointer-events-none z-[2]" />
       </div>
     </section>
   );
