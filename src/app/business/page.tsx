@@ -496,25 +496,9 @@ export default function BusinessPage() {
       </section>
 
       {/* =========================================================================
-          DISTRIBUTION & REACH SECTION (Redesigned with Skyline & Dotted Route)
+          DISTRIBUTION & REACH SECTION (Clean Minimalist 7 Emirates)
          ========================================================================= */}
-      <section className="relative py-28 md:py-36 bg-[#FBF7F2] overflow-hidden border-t border-[#EAD8C5]/60">
-        
-        {/* Layer 1: Ambient architectural backdrop, wheat decor and marble table */}
-        <div className="absolute inset-0 z-0 pointer-events-none select-none">
-          <Image
-            src="/images/distribution/distribution-bg.webp"
-            alt="Distribution Ambient Background"
-            fill
-            quality={90}
-            sizes="100vw"
-            className="object-cover object-center opacity-85"
-          />
-          {/* Subtle blending gradients to preserve deep text contrast */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#FBF7F2]/60 via-transparent to-[#FBF7F2]/40" />
-        </div>
-
-        {/* Section Container */}
+      <section className="relative py-24 md:py-32 bg-[#F8F1E8] border-t border-[#EAD8C5]/60">
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 text-center">
           
           {/* Eyebrow Label */}
@@ -571,84 +555,38 @@ export default function BusinessPage() {
             Our daily logistics routes guarantee that fresh breads, savouries, puffs, pastries, and snacks arrive at your stores and kitchens on time, every single morning.
           </motion.p>
 
-          {/* =========================================================================
-              DISTRIBUTION ROUTE & DESTINATION CARDS
-             ========================================================================= */}
-          <div className="relative mt-8 sm:mt-12">
-            
-            {/* Subtle Dotted Connection Route (Visible on Desktop & Tablet) */}
-            <div className="hidden lg:block absolute -top-8 left-0 right-0 w-full h-16 pointer-events-none z-0">
-              <svg className="w-full h-full" viewBox="0 0 1200 60" fill="none">
-                {/* Smooth flowing arched distribution route line */}
-                <path
-                  d="M 85 45 Q 600 -18 1115 45"
-                  stroke="#B88643"
-                  strokeWidth="1.8"
-                  strokeDasharray="4 6"
-                  opacity="0.6"
-                />
-                {/* 7 Glowing Gold Connection Dots positioned above each of the 7 cards */}
-                {[
-                  { cx: 85, cy: 45 },
-                  { cx: 255, cy: 22 },
-                  { cx: 425, cy: 11 },
-                  { cx: 600, cy: 6 },
-                  { cx: 775, cy: 11 },
-                  { cx: 945, cy: 22 },
-                  { cx: 1115, cy: 45 },
-                ].map((pt, i) => (
-                  <g key={i}>
-                    {/* Subtle outer ping/halo */}
-                    <circle cx={pt.cx} cy={pt.cy} r="6" fill="#B88643" opacity="0.25" />
-                    {/* Inner glowing pin */}
-                    <circle cx={pt.cx} cy={pt.cy} r="3.5" fill="#B88643" stroke="#FFF" strokeWidth="1.5" />
-                  </g>
-                ))}
-              </svg>
-            </div>
-
-            {/* 7 Destination Cards Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4 lg:gap-3.5 xl:gap-4 relative z-10">
-              {[
-                { name: "DUBAI", image: "/images/distribution/dubai.webp" },
-                { name: "ABU DHABI", image: "/images/distribution/abu-dhabi.webp" },
-                { name: "SHARJAH", image: "/images/distribution/sharjah.webp" },
-                { name: "AJMAN", image: "/images/distribution/ajman.webp" },
-                { name: "UMM AL QUWAIN", image: "/images/distribution/umm-al-quwain.webp" },
-                { name: "RAS AL KHAIMAH", image: "/images/distribution/ras-al-khaimah.webp" },
-                { name: "FUJAIRAH", image: "/images/distribution/fujairah.webp" },
-              ].map((destination, idx) => (
-                <motion.div
-                  key={destination.name}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.15 + idx * 0.06 }}
-                  whileHover={{ y: -6, scale: 1.02 }}
-                  className="group relative bg-[#FFFDF9]/95 backdrop-blur-md rounded-[22px] p-2.5 pb-4 shadow-[0_12px_32px_rgba(53,24,15,0.08)] border border-[#E8DCCF] hover:border-[#B88643]/50 hover:shadow-[0_20px_40px_rgba(184,134,67,0.16)] transition-all duration-300 flex flex-col items-center"
-                >
-                  {/* Destination Photo with Smooth Rounded Corners */}
-                  <div className="relative aspect-[4/3] w-full rounded-[16px] overflow-hidden bg-[#EAD8C5]/30 mb-3 shadow-inner">
-                    <Image
-                      src={destination.image}
-                      alt={`${destination.name} Malabar Bakery Daily Logistics Delivery`}
-                      fill
-                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 15vw"
-                      className="object-cover group-hover:scale-108 transition-transform duration-500 ease-out"
-                    />
-                    {/* Subtle warm overlay to blend with brand aesthetics */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#35180F]/20 via-transparent to-transparent pointer-events-none" />
-                  </div>
-
-                  {/* Destination Title & Golden Underline Accent */}
-                  <h3 className="text-[12px] sm:text-[13px] font-bold tracking-[0.14em] text-[#35180F] text-center leading-snug">
-                    {destination.name}
-                  </h3>
-                  <div className="w-6 h-[1.5px] bg-[#B88643] mt-2 rounded-full opacity-60 group-hover:w-10 group-hover:opacity-100 transition-all duration-300" />
-                </motion.div>
-              ))}
-            </div>
-
+          {/* 7 Emirates Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3 sm:gap-4 lg:gap-3.5 xl:gap-4">
+            {[
+              "Dubai",
+              "Abu Dhabi",
+              "Sharjah",
+              "Ajman",
+              "Umm Al Quwain",
+              "Ras Al Khaimah",
+              "Fujairah",
+            ].map((emirate, idx) => (
+              <motion.div
+                key={emirate}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 + idx * 0.05 }}
+                whileHover={{ y: -6, scale: 1.03 }}
+                className="group relative bg-[#FFFDF9] rounded-2xl py-6 px-4 shadow-[0_4px_20px_rgba(53,24,15,0.04)] border border-[#E8DCCF] hover:border-[#B88643]/60 hover:shadow-[0_12px_28px_rgba(184,134,67,0.15)] transition-all duration-300 flex flex-col items-center justify-center cursor-default"
+              >
+                {/* Subtle top indicator dot */}
+                <div className="w-1.5 h-1.5 rounded-full bg-[#B88643]/40 group-hover:bg-[#B88643] group-hover:scale-125 transition-all mb-3.5" />
+                
+                {/* Emirate Name */}
+                <h3 className="text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase text-[#35180F] group-hover:text-[#B88643] transition-colors leading-tight text-center">
+                  {emirate}
+                </h3>
+                
+                {/* Elegant subtle hover bar */}
+                <div className="w-4 h-[1.5px] bg-[#B88643]/30 group-hover:w-8 group-hover:bg-[#B88643] transition-all duration-300 mt-3 rounded-full" />
+              </motion.div>
+            ))}
           </div>
 
         </div>
