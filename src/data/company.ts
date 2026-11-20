@@ -11,7 +11,7 @@ export const companyData = {
     employees: "200+",
     certifications: ["HACCP", "ISO"]
   },
-  telephone: "+971 6 7481251",
+  telephone: "+971 67481251",
   mobile: "+971 50 533 0247",
   phone: "+971 50 533 0247",
   whatsapp: "+971505330247",
