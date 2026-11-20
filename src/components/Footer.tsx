@@ -42,7 +42,7 @@ export default function Footer() {
             <li>{companyData.address}</li>
             <li><a href={`tel:${companyData.telephone.replace(/\s+/g, '')}`} className="hover:text-brand-offwhite transition-colors">Telephone: {companyData.telephone}</a></li>
             <li><a href={`tel:${companyData.mobile.replace(/\s+/g, '')}`} className="hover:text-brand-offwhite transition-colors">Mobile: {companyData.mobile}</a></li>
-            <li><a href={`https://wa.me/${companyData.whatsapp}`} target="_blank" rel="noopener noreferrer" className="hover:text-brand-offwhite transition-colors">WhatsApp: +{companyData.whatsapp}</a></li>
+            <li><a href={`https://wa.me/${companyData.whatsapp.replace(/^\+/, '')}`} target="_blank" rel="noopener noreferrer" className="hover:text-brand-offwhite transition-colors">WhatsApp: {companyData.whatsapp.startsWith('+') ? companyData.whatsapp : `+${companyData.whatsapp}`}</a></li>
             <li><a href={`mailto:${companyData.email}`} className="hover:text-brand-offwhite transition-colors">Mail: {companyData.email}</a></li>
           </ul>
         </div>
