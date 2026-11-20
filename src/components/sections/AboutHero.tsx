@@ -14,7 +14,7 @@ export default function AboutHero() {
         {/* Mobile Portrait Background (hidden on md+) */}
         <div className="block md:hidden relative w-full h-full">
           <Image
-            src="/images/about/about-hero-sweets-mobile.webp"
+            src="/images/about/about-hero-v2-mobile.webp"
             alt="Malabar Bakery Artisanal Heritage Bakery Mobile"
             fill
             priority
@@ -27,7 +27,7 @@ export default function AboutHero() {
         {/* Desktop Landscape Background (hidden on mobile) */}
         <div className="hidden md:block relative w-full h-full">
           <Image
-            src="/images/about/about-hero-clean.webp"
+            src="/images/about/about-hero-v2.webp"
             alt="Malabar Bakery Artisanal Heritage Bakery Desktop"
             fill
             priority
