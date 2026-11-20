@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function AboutHero() {
   return (
-    <section className="relative min-h-[90vh] lg:min-h-screen w-full flex items-center overflow-hidden bg-[#F8F1E8] pt-[120px] md:pt-[140px] pb-16 lg:py-0">
+    <section className="relative min-h-[90vh] lg:min-h-screen w-full flex items-center overflow-hidden bg-[#1A110E] pt-[120px] md:pt-[140px] pb-16 lg:py-0">
       
       {/* =========================================================================
           HERO BACKGROUND: Desktop Landscape & Mobile Optimized Portrait
@@ -15,10 +15,10 @@ export default function AboutHero() {
         <div className="block md:hidden relative w-full h-full">
           <Image
             src="/images/about/about-hero-sweets-mobile.webp"
-            alt="Malabar Bakery Traditional Sweets Background Mobile"
+            alt="Malabar Bakery Artisanal Bakery Background Mobile"
             fill
             priority
-            quality={85}
+            quality={90}
             sizes="(max-width: 768px) 100vw, 1px"
             className="object-cover object-bottom"
           />
@@ -28,7 +28,7 @@ export default function AboutHero() {
         <div className="hidden md:block relative w-full h-full">
           <Image
             src="/images/about/about-hero-clean.webp"
-            alt="Malabar Bakery Traditional Sweets Background Desktop"
+            alt="Malabar Bakery Artisanal Bakery Background Desktop"
             fill
             priority
             quality={95}
@@ -36,6 +36,9 @@ export default function AboutHero() {
             className="object-cover object-center"
           />
         </div>
+
+        {/* Subtle warm vignette overlay for enhanced text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1A110E]/80 via-[#1A110E]/30 to-transparent pointer-events-none" />
       </div>
 
       {/* =========================================================================
@@ -52,7 +55,7 @@ export default function AboutHero() {
             className="flex items-center gap-3.5 mb-6 md:mb-8"
           >
             <div className="w-10 h-[1.5px] bg-[#B88643]" />
-            <span className="text-[11px] md:text-xs tracking-[0.25em] uppercase text-[#B88643] font-semibold">
+            <span className="text-[11px] md:text-xs tracking-[0.25em] uppercase text-[#D4AF37] font-semibold">
               Since 2005
             </span>
           </motion.div>
@@ -62,7 +65,7 @@ export default function AboutHero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.85, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[84px] text-[#35180F] leading-[1.04] tracking-tight mb-8 font-normal"
+            className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[84px] text-[#F8F1E8] leading-[1.04] tracking-tight mb-8 font-normal"
           >
             Taste.<br />
             Tradition.<br />
@@ -74,7 +77,7 @@ export default function AboutHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.35, ease: "easeOut" }}
-            className="text-[#35180F]/80 text-base md:text-lg font-light leading-relaxed max-w-md"
+            className="text-[#F8F1E8]/85 text-base md:text-lg font-light leading-relaxed max-w-md"
           >
             Bringing authentic and familiar flavours to the UAE market.
           </motion.p>
