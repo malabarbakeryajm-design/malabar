@@ -46,18 +46,33 @@ export default function LoadingScreen() {
       );
     };
 
-    // Detect hero video readiness (buffered first segments and metadata)
+    // Detect hero video readiness (buffered first segments and decoded first frame)
     const checkVideoLoaded = () => {
       const video = document.querySelector("video");
       if (!video) return Promise.resolve();
-      if (video.readyState >= 3) return Promise.resolve();
+      if (video.readyState >= 2) return Promise.resolve();
       return new Promise<void>((resolve) => {
-        const onReady = () => resolve();
-        video.addEventListener("canplaythrough", onReady, { once: true });
-        video.addEventListener("canplay", onReady, { once: true });
-        video.addEventListener("loadeddata", onReady, { once: true });
-        // Fallback for video
-        setTimeout(resolve, 2400);
+        let isDone = false;
+        const finish = () => {
+          if (!isDone) {
+            isDone = true;
+            resolve();
+          }
+        };
+
+        // Try unlocking video decoder in background
+        if (video.paused && video.currentTime === 0) {
+          video.play().then(() => {
+            video.pause();
+            finish();
+          }).catch(() => {});
+        }
+
+        video.addEventListener("canplay", finish, { once: true });
+        video.addEventListener("loadeddata", finish, { once: true });
+        video.addEventListener("seeked", finish, { once: true });
+        // Maximum wait for video: 7000ms
+        setTimeout(finish, 7000);
       });
     };
 
@@ -65,9 +80,9 @@ export default function LoadingScreen() {
     const interval = setInterval(() => {
       const allLoaded = imagesDone && windowDone && videoDone;
       if (allLoaded) {
-        currentProgress = Math.min(100, currentProgress + 10);
+        currentProgress = Math.min(100, currentProgress + 8);
       } else if (currentProgress < 85) {
-        currentProgress += Math.floor(Math.random() * 5) + 3;
+        currentProgress += Math.floor(Math.random() * 4) + 2;
       }
       setProgress(currentProgress);
 
@@ -77,7 +92,7 @@ export default function LoadingScreen() {
           setLoading(false);
         }, 350);
       }
-    }, 50);
+    }, 60);
 
     // Track window load
     if (document.readyState === "complete") {
@@ -113,7 +128,7 @@ export default function LoadingScreen() {
       setIsReady(true);
     });
 
-    // Safety timeout: Maximum 3.2s on very poor cellular connections
+    // Maximum safety timeout: 9 seconds to accommodate slower cellular networks
     const maxSafetyTimer = setTimeout(() => {
       imagesDone = true;
       windowDone = true;
@@ -124,7 +139,7 @@ export default function LoadingScreen() {
       setTimeout(() => {
         setLoading(false);
       }, 300);
-    }, 3200);
+    }, 9000);
 
     return () => {
       clearInterval(interval);
