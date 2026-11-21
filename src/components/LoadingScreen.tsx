@@ -18,56 +18,119 @@ export default function LoadingScreen() {
     }
     return () => {
       document.body.style.overflow = "";
-      // When preloader unmounts / finishes, notify window and Lenis to resume and recalculate dimensions
+      // When preloader finishes, signal window, Lenis and hero video to sync immediately
       window.dispatchEvent(new Event("resize"));
       window.dispatchEvent(new Event("scroll"));
+      window.dispatchEvent(new CustomEvent("site-loaded"));
     };
   }, [loading]);
 
   useEffect(() => {
-    // Smooth progress simulation and asset readiness detector
-    let current = 15;
-    const interval = setInterval(() => {
-      current += Math.floor(Math.random() * 8) + 4;
-      if (current >= 85 && !isReady) {
-        current = 88; // pause around 88% until window loaded
-      }
-      if (current >= 100) {
-        current = 100;
-        clearInterval(interval);
-      }
-      setProgress(Math.min(current, 100));
-    }, 80);
+    let currentProgress = 15;
+    let imagesDone = false;
+    let windowDone = false;
+    let videoDone = false;
 
-    const onWindowLoad = () => {
-      setIsReady(true);
-      setProgress(100);
-      // Brief pause at 100% so the user sees the completed state before elegant exit
-      setTimeout(() => {
-        setLoading(false);
-      }, 550);
+    // Detect when all critical visual elements in the DOM are loaded
+    const checkImagesLoaded = () => {
+      const images = Array.from(document.querySelectorAll("img"));
+      if (images.length === 0) return Promise.resolve();
+      return Promise.all(
+        images.map((img) => {
+          if (img.complete) return Promise.resolve();
+          return new Promise<void>((resolve) => {
+            img.addEventListener("load", () => resolve(), { once: true });
+            img.addEventListener("error", () => resolve(), { once: true });
+          });
+        })
+      );
     };
 
+    // Detect hero video readiness (buffered first segments and metadata)
+    const checkVideoLoaded = () => {
+      const video = document.querySelector("video");
+      if (!video) return Promise.resolve();
+      if (video.readyState >= 3) return Promise.resolve();
+      return new Promise<void>((resolve) => {
+        const onReady = () => resolve();
+        video.addEventListener("canplaythrough", onReady, { once: true });
+        video.addEventListener("canplay", onReady, { once: true });
+        video.addEventListener("loadeddata", onReady, { once: true });
+        // Fallback for video
+        setTimeout(resolve, 2400);
+      });
+    };
+
+    // Smooth incremental animation towards target
+    const interval = setInterval(() => {
+      const allLoaded = imagesDone && windowDone && videoDone;
+      if (allLoaded) {
+        currentProgress = Math.min(100, currentProgress + 10);
+      } else if (currentProgress < 85) {
+        currentProgress += Math.floor(Math.random() * 5) + 3;
+      }
+      setProgress(currentProgress);
+
+      if (currentProgress >= 100) {
+        clearInterval(interval);
+        setTimeout(() => {
+          setLoading(false);
+        }, 350);
+      }
+    }, 50);
+
+    // Track window load
     if (document.readyState === "complete") {
-      onWindowLoad();
+      windowDone = true;
     } else {
-      window.addEventListener("load", onWindowLoad);
+      window.addEventListener("load", () => {
+        windowDone = true;
+      }, { once: true });
     }
 
-    // Safety fallback: Never keep user stuck for more than 3 seconds even on extremely slow networks
-    const fallbackTimer = setTimeout(() => {
+    // Track images
+    checkImagesLoaded().then(() => {
+      imagesDone = true;
+    });
+
+    // Track video
+    checkVideoLoaded().then(() => {
+      videoDone = true;
+    });
+
+    // Check all systems ready
+    Promise.all([
+      new Promise<void>((resolve) => {
+        if (document.readyState === "complete") resolve();
+        else window.addEventListener("load", () => resolve(), { once: true });
+      }),
+      checkImagesLoaded(),
+      checkVideoLoaded(),
+    ]).then(() => {
+      imagesDone = true;
+      windowDone = true;
+      videoDone = true;
+      setIsReady(true);
+    });
+
+    // Safety timeout: Maximum 3.2s on very poor cellular connections
+    const maxSafetyTimer = setTimeout(() => {
+      imagesDone = true;
+      windowDone = true;
+      videoDone = true;
+      setIsReady(true);
+      currentProgress = 100;
       setProgress(100);
       setTimeout(() => {
         setLoading(false);
-      }, 400);
-    }, 2800);
+      }, 300);
+    }, 3200);
 
     return () => {
       clearInterval(interval);
-      window.removeEventListener("load", onWindowLoad);
-      clearTimeout(fallbackTimer);
+      clearTimeout(maxSafetyTimer);
     };
-  }, [isReady]);
+  }, []);
 
   return (
     <AnimatePresence>

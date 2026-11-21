@@ -40,6 +40,8 @@ export default function Hero() {
 
     const duration = () => video.duration || 10;
 
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+
     // Timeout-guarded seeking to prevent decoder freeze/lag on slow or busy devices
     let seekTimeout: NodeJS.Timeout | null = null;
 
@@ -52,13 +54,15 @@ export default function Hero() {
 
           // Clear any dangling seek timeout
           if (seekTimeout) clearTimeout(seekTimeout);
-          // Safety fallback: if hardware decoder drops the 'seeked' event, unlock after 120ms
+          // Safety fallback: if hardware decoder drops the 'seeked' event, unlock quickly
           seekTimeout = setTimeout(() => {
             isSeeking = false;
-          }, 120);
+          }, isMobile ? 80 : 120);
 
-          // Step towards target smoothly forward or backward with proportional stepping
-          const step = Math.sign(diff) * Math.max(0.03, Math.abs(diff) * 0.25);
+          // Proportional stepping calibrated for mobile GPU vs desktop
+          const stepMultiplier = isMobile ? 0.35 : 0.25;
+          const minStep = isMobile ? 0.04 : 0.03;
+          const step = Math.sign(diff) * Math.max(minStep, Math.abs(diff) * stepMultiplier);
           const next = diff > 0 
             ? Math.min(targetTime, video.currentTime + step)
             : Math.max(targetTime, video.currentTime + step);
@@ -142,11 +146,13 @@ export default function Hero() {
     window.addEventListener("pointerdown", unlockDecoder, { once: true, passive: true });
     window.addEventListener("wheel", unlockDecoder, { once: true, passive: true });
     window.addEventListener("resize", handleScroll, { passive: true });
+    window.addEventListener("site-loaded", handleReady, { once: true });
 
     return () => {
       cancelAnimationFrame(animId);
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleScroll);
+      window.removeEventListener("site-loaded", handleReady);
       window.removeEventListener("touchstart", unlockDecoder);
       window.removeEventListener("pointerdown", unlockDecoder);
       window.removeEventListener("wheel", unlockDecoder);
