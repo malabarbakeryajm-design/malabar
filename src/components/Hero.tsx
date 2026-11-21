@@ -116,6 +116,7 @@ export default function Hero() {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("lenis-scroll", handleScroll, { passive: true });
 
     // Initial check and ready listener
     const handleReady = () => {
@@ -151,6 +152,7 @@ export default function Hero() {
     return () => {
       cancelAnimationFrame(animId);
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("lenis-scroll", handleScroll);
       window.removeEventListener("resize", handleScroll);
       window.removeEventListener("site-loaded", handleReady);
       window.removeEventListener("touchstart", unlockDecoder);

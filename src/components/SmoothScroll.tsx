@@ -6,21 +6,26 @@ import "lenis/dist/lenis.css";
 
 export default function SmoothScroll({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    // Premium buttery-smooth momentum scrolling with hardware acceleration
+    // Ultra-luxurious, butter-smooth momentum scrolling
     const lenis = new Lenis({
-      duration: 1.1,
+      duration: 1.25,
+      // Fluid ease-out quartic curve: instant response with soft, weightless deceleration
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
-      wheelMultiplier: 0.9,
-      touchMultiplier: 1.2,
+      wheelMultiplier: 1.0,
+      touchMultiplier: 1.5,
       infinite: false,
+      autoRaf: false, // We control the RAF loop with precision
     });
 
-    // Connect Lenis scroll events to window scroll listeners
+    (window as any).__lenisInstance = lenis;
+
+    // Direct synchronization on scroll
     lenis.on("scroll", () => {
-      // Keep native scroll listeners synchronized without jitter
+      // Dispatches custom event for components listening to high-fidelity Lenis coordinates
+      window.dispatchEvent(new CustomEvent("lenis-scroll", { detail: lenis }));
     });
 
     let rafId: number;
@@ -33,6 +38,7 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
     return () => {
       cancelAnimationFrame(rafId);
       lenis.destroy();
+      delete (window as any).__lenisInstance;
     };
   }, []);
 
