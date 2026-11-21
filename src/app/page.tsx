@@ -25,7 +25,7 @@ export default function Home() {
               <p className="text-brand-text/80 text-lg mb-10 max-w-md leading-relaxed">
                 Malabar Bakery has been a staple of quality and authenticity. We blend time-honored Malabar recipes with modern baking techniques to deliver products that feel like home.
               </p>
-              <Link 
+              <Link
                 href="/about"
                 className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-brand-dark hover:text-brand-gold transition-colors group"
               >
@@ -39,12 +39,12 @@ export default function Home() {
               <div className="absolute inset-0 bg-brand-dark/5 z-10"></div>
               {/* Need to provide image later, use a colored placeholder for now if no image is present */}
               <div className="w-full h-full bg-brand-secondary/20 flex items-center justify-center relative overflow-hidden">
-                 <Image 
-                    src="/images/hero.webp" // Using hero as a placeholder for the story image
-                    alt="Baking process"
-                    fill
-                    className="object-cover"
-                 />
+                <Image
+                  src="/images/hero.webp" // Using hero as a placeholder for the story image
+                  alt="Baking process"
+                  fill
+                  className="object-cover"
+                />
               </div>
             </div>
           </div>
@@ -62,7 +62,7 @@ export default function Home() {
               Discover our range of bakery favourites.
             </p>
           </div>
-          
+
           <ProductGrid />
         </div>
       </section>
@@ -82,7 +82,7 @@ export default function Home() {
           <p className="text-brand-text/70 text-lg mb-10">
             Talk to our team about products, partnerships or enquiries.
           </p>
-          <Link 
+          <Link
             href="/contact"
             className="inline-block bg-brand-dark text-brand-cream px-10 py-4 text-xs tracking-[0.18em] uppercase hover:bg-brand-primary transition-colors duration-300"
           >
