@@ -10,15 +10,23 @@ export default function LoadingScreen() {
   const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
-    // Only lock scrolling while loading
+    // Only lock scrolling while loading via Lenis stop/start to prevent breaking scroll physics
     if (loading) {
-      document.body.style.overflow = "hidden";
+      if ((window as any).__lenisInstance) {
+        (window as any).__lenisInstance.stop();
+      }
+      document.documentElement.classList.add("lenis-stopped");
     } else {
-      document.body.style.overflow = "";
+      if ((window as any).__lenisInstance) {
+        (window as any).__lenisInstance.start();
+      }
+      document.documentElement.classList.remove("lenis-stopped");
     }
     return () => {
-      document.body.style.overflow = "";
-      // When preloader finishes, signal window, Lenis and hero video to sync immediately
+      if ((window as any).__lenisInstance) {
+        (window as any).__lenisInstance.start();
+      }
+      document.documentElement.classList.remove("lenis-stopped");
       window.dispatchEvent(new Event("resize"));
       window.dispatchEvent(new Event("scroll"));
       window.dispatchEvent(new CustomEvent("site-loaded"));
