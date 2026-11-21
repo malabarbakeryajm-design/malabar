@@ -34,17 +34,19 @@ export default function LoadingScreen() {
   }, [loading]);
 
   useEffect(() => {
-    let currentProgress = 15;
+    let currentProgress = 25;
     let imagesDone = false;
     let windowDone = false;
     let videoDone = false;
 
-    // Detect when all critical visual elements in the DOM are loaded
+    // Detect when critical above-the-fold and priority images are loaded
     const checkImagesLoaded = () => {
       const images = Array.from(document.querySelectorAll("img"));
       if (images.length === 0) return Promise.resolve();
+      // Filter for priority/hero images or first 6 critical assets to avoid waiting for lazy-loaded off-screen footers
+      const criticalImages = images.slice(0, 8);
       return Promise.all(
-        images.map((img) => {
+        criticalImages.map((img) => {
           if (img.complete) return Promise.resolve();
           return new Promise<void>((resolve) => {
             img.addEventListener("load", () => resolve(), { once: true });
@@ -58,6 +60,7 @@ export default function LoadingScreen() {
     const checkVideoLoaded = () => {
       const video = document.querySelector("video");
       if (!video) return Promise.resolve();
+      // readyState >= 2 means HAVE_CURRENT_DATA: first frame is decoded and ready to render immediately
       if (video.readyState >= 2) return Promise.resolve();
       return new Promise<void>((resolve) => {
         let isDone = false;
@@ -68,7 +71,7 @@ export default function LoadingScreen() {
           }
         };
 
-        // Try unlocking video decoder in background
+        // Proactive decoder unlock
         if (video.paused && video.currentTime === 0) {
           video.play().then(() => {
             video.pause();
@@ -76,21 +79,23 @@ export default function LoadingScreen() {
           }).catch(() => {});
         }
 
-        video.addEventListener("canplay", finish, { once: true });
         video.addEventListener("loadeddata", finish, { once: true });
+        video.addEventListener("canplay", finish, { once: true });
         video.addEventListener("seeked", finish, { once: true });
-        // Maximum wait for video: 7000ms
-        setTimeout(finish, 7000);
+        // Max wait for video decode: 2200ms
+        setTimeout(finish, 2200);
       });
     };
 
-    // Smooth incremental animation towards target
+    // Snappy, energetic progress ticker (fires every 28ms)
     const interval = setInterval(() => {
       const allLoaded = imagesDone && windowDone && videoDone;
       if (allLoaded) {
-        currentProgress = Math.min(100, currentProgress + 8);
-      } else if (currentProgress < 85) {
-        currentProgress += Math.floor(Math.random() * 4) + 2;
+        // Accelerate to 100% smoothly and swiftly
+        currentProgress = Math.min(100, currentProgress + 14);
+      } else if (currentProgress < 88) {
+        // Steady climb while buffering
+        currentProgress += Math.floor(Math.random() * 6) + 4;
       }
       setProgress(currentProgress);
 
@@ -98,14 +103,17 @@ export default function LoadingScreen() {
         clearInterval(interval);
         setTimeout(() => {
           setLoading(false);
-        }, 350);
+        }, 220);
       }
-    }, 60);
+    }, 28);
 
     // Track window load
-    if (document.readyState === "complete") {
+    if (document.readyState === "complete" || document.readyState === "interactive") {
       windowDone = true;
     } else {
+      window.addEventListener("DOMContentLoaded", () => {
+        windowDone = true;
+      }, { once: true });
       window.addEventListener("load", () => {
         windowDone = true;
       }, { once: true });
@@ -124,7 +132,7 @@ export default function LoadingScreen() {
     // Check all systems ready
     Promise.all([
       new Promise<void>((resolve) => {
-        if (document.readyState === "complete") resolve();
+        if (document.readyState === "complete" || document.readyState === "interactive") resolve();
         else window.addEventListener("load", () => resolve(), { once: true });
       }),
       checkImagesLoaded(),
@@ -136,7 +144,7 @@ export default function LoadingScreen() {
       setIsReady(true);
     });
 
-    // Maximum safety timeout: 9 seconds to accommodate slower cellular networks
+    // Tight maximum safety timeout: 2.8s max so users never wait unnecessarily
     const maxSafetyTimer = setTimeout(() => {
       imagesDone = true;
       windowDone = true;
@@ -146,8 +154,8 @@ export default function LoadingScreen() {
       setProgress(100);
       setTimeout(() => {
         setLoading(false);
-      }, 300);
-    }, 9000);
+      }, 200);
+    }, 2800);
 
     return () => {
       clearInterval(interval);
