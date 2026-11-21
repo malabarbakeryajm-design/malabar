@@ -67,31 +67,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Heritage Section */}
-      <section className="relative py-32 md:py-48 overflow-hidden bg-brand-dark">
-        <div className="absolute inset-0 z-0 opacity-40">
-           <Image 
-              src="/images/hero.webp" // Placeholder for heritage image
-              alt="Malabar Heritage"
-              fill
-              className="object-cover"
-           />
-        </div>
-        <div className="absolute inset-0 bg-[#32150C]/60 mix-blend-multiply z-10" />
-        
-        <div className="relative z-20 max-w-7xl mx-auto px-6 text-center">
-          <p className="text-xs tracking-[0.18em] uppercase text-brand-gold mb-6 font-medium">
-            Our Heritage
-          </p>
-          <h2 className="font-serif text-4xl md:text-6xl lg:text-7xl text-brand-cream mb-8">
-            From Malabar<br />to the UAE.
-          </h2>
-          <p className="text-brand-cream/80 text-lg max-w-2xl mx-auto font-light">
-            Bringing the authentic tastes of our homeland to your table, every single day.
-          </p>
-        </div>
-      </section>
-
       {/* Quality Section */}
       <QualityPromise />
 
