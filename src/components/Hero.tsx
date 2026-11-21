@@ -57,12 +57,12 @@ export default function Hero() {
           // Safety fallback: if hardware decoder drops the 'seeked' event, unlock quickly
           seekTimeout = setTimeout(() => {
             isSeeking = false;
-          }, isMobile ? 80 : 120);
+          }, isMobile ? 80 : 100);
 
-          // Proportional stepping calibrated for mobile GPU vs desktop
-          const stepMultiplier = isMobile ? 0.35 : 0.25;
-          const minStep = isMobile ? 0.04 : 0.03;
-          const step = Math.sign(diff) * Math.max(minStep, Math.abs(diff) * stepMultiplier);
+          // Adaptive stepping: dynamic proportional step that scales with distance so video reaches 100% completion cleanly
+          const absDiff = Math.abs(diff);
+          const dynamicStep = absDiff > 0.4 ? absDiff * 0.55 : Math.max(isMobile ? 0.04 : 0.03, absDiff * (isMobile ? 0.4 : 0.35));
+          const step = Math.sign(diff) * dynamicStep;
           const next = diff > 0 
             ? Math.min(targetTime, video.currentTime + step)
             : Math.max(targetTime, video.currentTime + step);
@@ -108,8 +108,11 @@ export default function Hero() {
       if (totalScrollable <= 0) return;
 
       const currentScrolled = -rect.top;
+      // Normalizing progress: 0 at top of hero, 1 at bottom before unpinning
       const progress = Math.max(0, Math.min(1, currentScrolled / totalScrollable));
-      const calculatedTime = progress * duration();
+      // Clamp to duration - 0.05 so video stays at final frame and doesn't wrap or stop early
+      const maxVideoTime = Math.max(0, duration() - 0.04);
+      const calculatedTime = progress * maxVideoTime;
 
       // Bidirectional scrubbing: scrolls smoothly both downwards and upwards
       targetTime = calculatedTime;
