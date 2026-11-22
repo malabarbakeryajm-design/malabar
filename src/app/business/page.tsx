@@ -2,8 +2,11 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { companyData } from "@/data/company";
+import { manufacturingSections } from "@/data/manufacturing";
+import { ArrowUpRight } from "lucide-react";
 
 export default function BusinessPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -470,25 +473,33 @@ export default function BusinessPage() {
           </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 md:gap-6 text-xs sm:text-sm uppercase tracking-[0.16em] text-[#EAD8C5] font-medium">
-            {[
-              "Automated Facility",
-              "Production & Scaling",
-              "Dough Preparation",
-              "Hygienic Packaging",
-              "Quality Checks",
-              "Cold & Dry Storage",
-              "Prompt Dispatch",
-              "Refrigerated Fleet",
-            ].map((step, idx) => (
+            {manufacturingSections.map((item, idx) => (
               <motion.div
-                key={step}
+                key={item.slug}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.05 }}
-                className="py-6 px-4 bg-white/[0.03] border border-[#B88643]/20 rounded-2xl hover:bg-[#B88643]/10 hover:border-[#B88643]/40 transition-all flex items-center justify-center text-center shadow-sm"
               >
-                {step}
+                <Link
+                  href={`/manufacturing/${item.slug}`}
+                  className="group relative overflow-hidden py-6 px-4 bg-white/[0.04] border border-[#B88643]/25 rounded-2xl hover:bg-[#B88643]/20 hover:border-[#B88643]/70 hover:shadow-[0_12px_28px_rgba(184,134,67,0.2)] transition-all flex flex-col items-center justify-center text-center shadow-sm min-h-[96px] cursor-pointer"
+                >
+                  {/* Subtle top indicator index badge */}
+                  <span className="text-[10px] tracking-widest text-[#B88643] group-hover:text-[#F8F1E8] mb-1 font-semibold transition-colors">
+                    0{idx + 1}
+                  </span>
+
+                  {/* Title */}
+                  <span className="group-hover:text-white transition-colors">
+                    {item.badge}
+                  </span>
+
+                  {/* Hover Arrow Indicator */}
+                  <span className="absolute top-2.5 right-2.5 text-[#B88643] opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all">
+                    <ArrowUpRight size={14} />
+                  </span>
+                </Link>
               </motion.div>
             ))}
           </div>
