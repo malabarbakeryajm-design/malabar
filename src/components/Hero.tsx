@@ -42,30 +42,18 @@ export default function Hero() {
 
     const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
 
-    // Timeout-guarded seeking to prevent decoder freeze/lag on slow or busy devices
-    let seekTimeout: NodeJS.Timeout | null = null;
-
-    // Direct, ultra-smooth bidirectional seek step loop driven by requestAnimationFrame
+    // Direct, buttery-smooth seek loop tied directly to frame rendering
     const updateLoop = () => {
-      if (video.readyState >= 1 && !isSeeking) {
+      if (video.readyState >= 1) {
         const diff = targetTime - video.currentTime;
-        if (Math.abs(diff) > 0.005) {
+        // Direct seek without debounce/locking when video is GOP-1 all-intra
+        if (Math.abs(diff) > 0.008 && !isSeeking) {
           isSeeking = true;
 
-          // Clear any dangling seek timeout
-          if (seekTimeout) clearTimeout(seekTimeout);
-          // Safety fallback: if hardware decoder drops the 'seeked' event, unlock quickly
-          seekTimeout = setTimeout(() => {
-            isSeeking = false;
-          }, isMobile ? 80 : 100);
-
-          // Adaptive stepping: dynamic proportional step that scales with distance so video reaches 100% completion cleanly
-          const absDiff = Math.abs(diff);
-          const dynamicStep = absDiff > 0.4 ? absDiff * 0.55 : Math.max(isMobile ? 0.04 : 0.03, absDiff * (isMobile ? 0.4 : 0.35));
-          const step = Math.sign(diff) * dynamicStep;
-          const next = diff > 0 
-            ? Math.min(targetTime, video.currentTime + step)
-            : Math.max(targetTime, video.currentTime + step);
+          // Smooth interpolation towards scroll target
+          const factor = isMobile ? 0.45 : 0.4;
+          const delta = diff * factor;
+          const next = video.currentTime + delta;
 
           try {
             if ("fastSeek" in video && typeof (video as any).fastSeek === "function") {
@@ -75,7 +63,6 @@ export default function Hero() {
             }
           } catch {
             isSeeking = false;
-            if (seekTimeout) clearTimeout(seekTimeout);
           }
         }
       }
@@ -94,7 +81,6 @@ export default function Hero() {
     animId = requestAnimationFrame(updateLoop);
 
     const handleSeeked = () => {
-      if (seekTimeout) clearTimeout(seekTimeout);
       isSeeking = false;
       setIsVideoLoaded(true);
     };
