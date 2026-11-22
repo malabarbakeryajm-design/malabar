@@ -369,3 +369,4 @@ export default async function ManufacturingDetailPage({ params }: Props) {
     </div>
   );
 }
+
