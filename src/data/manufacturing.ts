@@ -232,11 +232,11 @@ export const manufacturingSections: ManufacturingSection[] = [
     badge: "Refrigerated Fleet",
     title: "Fleet & Distribution Logistics",
     tagline: "Connecting Our Bakery to Your Business.",
-    subtitle: "35 Dedicated Delivery Vehicles Serving the UAE",
+    subtitle: "50+ Dedicated Delivery Vehicles Serving the UAE",
     intro: [
       "Our distribution operations are an important part of the Malabar Bakery customer experience.",
       "Through our established sales and delivery network, we support the supply requirements of restaurants, cafeterias, bakeries, catering companies, and other foodservice establishments.",
-      "With a fleet of 35 dedicated sales and distribution vehicles, we ensure our bakery products reach customers efficiently, reliably, and on time, every single morning.",
+      "With a fleet of 50+ dedicated sales and distribution vehicles, we ensure our bakery products reach customers efficiently, reliably, and on time, every single morning.",
       "Our delivery operations are planned to connect manufacturing output with customer requirements without unnecessary interruptions.",
     ],
     image: "/images/manufacturing/refrigerated-fleet.webp",
@@ -252,7 +252,7 @@ export const manufacturingSections: ManufacturingSection[] = [
     commitment:
       "To build long-term business relationships through dependable service, responsible product handling, and consistent supply.",
     stats: [
-      { label: "Fleet Size", value: "35+ Vehicles" },
+      { label: "Fleet Size", value: "50+ Vehicles" },
       { label: "Service", value: "Daily Morning" },
       { label: "Handling", value: "Temperature Safe" },
       { label: "Emirates", value: "Across UAE" },
