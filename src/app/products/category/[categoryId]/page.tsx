@@ -1,10 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
+import { redirect } from "next/navigation";
 import { categories } from "@/data/categories";
 import { products } from "@/data/products";
 
 export default async function CategoryPage({ params }: { params: Promise<{ categoryId: string }> }) {
   const resolvedParams = await params;
+  if (resolvedParams.categoryId === "snacks") {
+    redirect("/products/category/south-indian-snacks");
+  }
   const currentCategory = categories.find(c => c.id === resolvedParams.categoryId);
   
   if (!currentCategory) {

@@ -44,7 +44,6 @@ export default function Header() {
       hasDropdown: true,
       dropdownItems: [
         { name: "South Indian Snacks", href: "/products/category/south-indian-snacks" },
-        { name: "Snacks", href: "/products/category/snacks" },
         { name: "Breads", href: "/products/category/breads" },
         { name: "Breakfast Products", href: "/products/category/breakfast-products" },
         { name: "Sandwiches", href: "/products/category/sandwiches" },

@@ -1,7 +1,6 @@
 export const categories = [
   { id: "all", name: "All" },
   { id: "south-indian-snacks", name: "South Indian Snacks", description: "Authentic and crispy traditional snacks.", image: "/images/south-indian-snacks.webp" },
-  { id: "snacks", name: "Snacks", description: "Perfect bites for any time of the day.", image: "/images/snacks.webp" },
   { id: "breads", name: "Breads", description: "Freshly baked daily, perfect crust and soft interior.", image: "/images/bread-category.webp" },
   { id: "breakfast-products", name: "Breakfast Products", description: "Start your day with our authentic breakfast range.", image: "/images/breakfast.webp" },
   { id: "sandwiches", name: "Sandwiches", description: "Freshly prepared and ready to eat.", image: "/images/sandwiches.webp" },
