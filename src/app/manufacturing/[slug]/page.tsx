@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
 import { manufacturingSections } from "@/data/manufacturing";
 import { 
@@ -74,70 +73,44 @@ export default async function ManufacturingDetailPage({ params }: Props) {
             <span className="text-[#B88643] font-medium">{section.badge}</span>
           </nav>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
             
-            {/* Left Hero Narrative */}
-            <div className="lg:col-span-7 flex flex-col">
-              <div className="inline-flex items-center gap-3 mb-5">
-                <span className="w-8 h-[1.5px] bg-[#B88643]" />
-                <span className="text-xs font-semibold tracking-[0.24em] uppercase text-[#B88643]">
-                  Manufacturing & Operations
-                </span>
-              </div>
+            {/* Hero Narrative */}
+            <div className="inline-flex items-center gap-3 mb-5">
+              <span className="w-8 h-[1.5px] bg-[#B88643]" />
+              <span className="text-xs font-semibold tracking-[0.24em] uppercase text-[#B88643]">
+                Manufacturing & Operations
+              </span>
+              <span className="w-8 h-[1.5px] bg-[#B88643]" />
+            </div>
 
-              <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[62px] leading-[1.08] text-[#F8F1E8] mb-6 font-normal">
-                {section.title}
-              </h1>
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[62px] leading-[1.08] text-[#F8F1E8] mb-6 font-normal">
+              {section.title}
+            </h1>
 
-              <p className="font-serif italic text-xl sm:text-2xl text-[#E5C158] font-light mb-6">
-                "{section.tagline}"
-              </p>
+            <p className="font-serif italic text-xl sm:text-2xl text-[#E5C158] font-light mb-6">
+              "{section.tagline}"
+            </p>
 
-              <p className="text-sm sm:text-base text-[#EAD8C5]/85 font-light leading-relaxed mb-8 max-w-2xl">
-                {section.subtitle}
-              </p>
+            <p className="text-sm sm:text-base text-[#EAD8C5]/85 font-light leading-relaxed mb-10 max-w-2xl">
+              {section.subtitle}
+            </p>
 
-              {/* Quick Spec Highlights */}
-              {section.stats && (
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-4 border-t border-[#B88643]/20">
-                  {section.stats.map((stat) => (
-                    <div key={stat.label} className="p-3 bg-white/[0.04] border border-[#B88643]/20 rounded-xl">
-                      <div className="text-base sm:text-lg font-serif text-[#F8F1E8] font-medium">
-                        {stat.value}
-                      </div>
-                      <div className="text-[10px] sm:text-[11px] tracking-wider uppercase text-[#EAD8C5]/60 mt-0.5">
-                        {stat.label}
-                      </div>
+            {/* Quick Spec Highlights */}
+            {section.stats && (
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-6 border-t border-[#B88643]/20 w-full">
+                {section.stats.map((stat) => (
+                  <div key={stat.label} className="p-4 bg-white/[0.04] border border-[#B88643]/20 rounded-xl">
+                    <div className="text-base sm:text-xl font-serif text-[#F8F1E8] font-medium">
+                      {stat.value}
                     </div>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            {/* Right Hero Image Card */}
-            <div className="lg:col-span-5">
-              <div className="relative aspect-[4/3] sm:aspect-[16/11] rounded-2xl overflow-hidden shadow-2xl border border-[#B88643]/30 group">
-                <Image
-                  src={section.image}
-                  alt={section.title}
-                  fill
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 42vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#35180F]/70 via-transparent to-transparent pointer-events-none" />
-                
-                {/* Badge Overlay */}
-                <div className="absolute bottom-4 left-4 right-4 bg-[#35180F]/90 backdrop-blur-md py-2.5 px-4 rounded-xl border border-[#B88643]/30 flex items-center justify-between">
-                  <span className="text-xs font-semibold tracking-[0.16em] uppercase text-[#EAD8C5]">
-                    {section.badge}
-                  </span>
-                  <span className="text-[11px] font-serif italic text-[#B88643]">
-                    Malabar Operations
-                  </span>
-                </div>
+                    <div className="text-[10px] sm:text-[11px] tracking-wider uppercase text-[#EAD8C5]/60 mt-1">
+                      {stat.label}
+                    </div>
+                  </div>
+                ))}
               </div>
-            </div>
+            )}
 
           </div>
         </div>
