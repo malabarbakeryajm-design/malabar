@@ -102,6 +102,10 @@ export default function LoadingScreen() {
       if (currentProgress >= 100) {
         clearInterval(interval);
         setTimeout(() => {
+          if (typeof window !== "undefined") {
+            (window as any).__siteLoaded = true;
+            window.dispatchEvent(new CustomEvent("site-loaded"));
+          }
           setLoading(false);
         }, 220);
       }
@@ -153,6 +157,10 @@ export default function LoadingScreen() {
       currentProgress = 100;
       setProgress(100);
       setTimeout(() => {
+        if (typeof window !== "undefined") {
+          (window as any).__siteLoaded = true;
+          window.dispatchEvent(new CustomEvent("site-loaded"));
+        }
         setLoading(false);
       }, 200);
     }, 2800);
@@ -164,7 +172,14 @@ export default function LoadingScreen() {
   }, []);
 
   return (
-    <AnimatePresence>
+    <AnimatePresence
+      onExitComplete={() => {
+        if (typeof window !== "undefined") {
+          (window as any).__siteLoaded = true;
+          window.dispatchEvent(new CustomEvent("site-loaded"));
+        }
+      }}
+    >
       {loading && (
         <motion.div
           key="preloader"
