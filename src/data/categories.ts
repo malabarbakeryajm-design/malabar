@@ -10,7 +10,7 @@ export const categories = [
   { id: "puffs", name: "Puffs", description: "Flaky, golden puffs with savory fillings.", image: "/images/puffs.webp" },
   { id: "biscuits", name: "Biscuits", description: "Crispy, buttery, and perfect for your tea.", image: "/images/products/milk-biscuit.webp" },
   { id: "samosas", name: "Samosas", description: "Crispy outside, flavorful inside.", image: "/images/samosas.webp" },
-  { id: "cakes", name: "Cakes", description: "Beautifully baked cakes for every occasion.", image: "/images/products/plum-cake.webp" },
+  { id: "cakes", name: "Cakes", description: "Beautifully baked cakes for every occasion.", image: "/images/products/classic-marble-cake.webp" },
   { id: "sweets", name: "Sweets", description: "Traditional sweets to brighten your day.", image: "/images/sweets.webp" },
   { id: "ready-to-cook", name: "Ready to Cook", description: "Convenient and authentic ready-to-cook items.", image: "/images/ready-to-cook.webp" },
 ];
