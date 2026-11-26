@@ -846,7 +846,7 @@ export const products = [
     "categoryId": "samosas",
     "description": "Delicious hot Chicken Spring Roll.",
     "fullDescription": "Enjoy our delicious Chicken Spring Roll, perfect for a quick snack or a side dish. Packed with authentic flavors.",
-    "image": "/images/products/chicken-spring-roll-official.webp",
+    "image": "/images/products/chicken-spring-roll-samosa.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
     "shelfLife": "1-2 Days",
