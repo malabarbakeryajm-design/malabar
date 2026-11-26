@@ -486,7 +486,7 @@ export const products = [
     "categoryId": "cakes",
     "description": "Freshly prepared Plum Cake by Malabar Bakery.",
     "fullDescription": "Enjoy our delicious Plum Cake, made with the finest ingredients to guarantee the highest quality and taste.",
-    "image": "/images/products/plum-cake.webp",
+    "image": "/images/products/plum-cake-official.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
     "shelfLife": "Varies",
@@ -1437,21 +1437,6 @@ export const products = [
     "shelfLife": "4-5 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bread",
-    "vegetarian": true
-  },
-  {
-    "id": "chapati-breads",
-    "slug": "chapati-breads",
-    "name": "Chapati",
-    "categoryId": "breads",
-    "description": "Soft, homestyle ready-to-heat wheat chapatis.",
-    "fullDescription": "Traditional wholesome whole wheat flatbreads, lovingly prepared and cooked to perfection. Soft, tender, and ideal with your favorite curries.",
-    "image": "/images/products/chapati.webp",
-    "packSize": "1 Pack",
-    "weight": "Varies",
-    "shelfLife": "4-5 Days",
-    "storageCondition": "Store in a cool, dry place or refrigerate",
-    "productType": "Flatbread",
     "vegetarian": true
   },
   {
