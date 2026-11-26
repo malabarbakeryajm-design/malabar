@@ -11,7 +11,7 @@ export const products = [
     "weight": "50-150 grams",
     "shelfLife": "30-45 Days",
     "storageCondition": "Store in a cool, dry place",
-    "productType": "Bakery Item",
+    "productType": "Biscuit",
     "vegetarian": true
   },
   {
@@ -26,7 +26,7 @@ export const products = [
     "weight": "50-150 grams",
     "shelfLife": "30-45 Days",
     "storageCondition": "Store in a cool, dry place",
-    "productType": "Bakery Item",
+    "productType": "Biscuit",
     "vegetarian": true
   },
   {
@@ -41,7 +41,7 @@ export const products = [
     "weight": "50-150 grams",
     "shelfLife": "30-45 Days",
     "storageCondition": "Store in a cool, dry place",
-    "productType": "Bakery Item",
+    "productType": "Biscuit",
     "vegetarian": true
   },
   {
@@ -56,7 +56,7 @@ export const products = [
     "weight": "50-150 grams",
     "shelfLife": "30-45 Days",
     "storageCondition": "Store in a cool, dry place",
-    "productType": "Bakery Item",
+    "productType": "Biscuit",
     "vegetarian": true
   },
   {
@@ -71,7 +71,7 @@ export const products = [
     "weight": "50-150 grams",
     "shelfLife": "30-45 Days",
     "storageCondition": "Store in a cool, dry place",
-    "productType": "Bakery Item",
+    "productType": "Biscuit",
     "vegetarian": true
   },
   {
@@ -86,7 +86,7 @@ export const products = [
     "weight": "50-150 grams",
     "shelfLife": "30-45 Days",
     "storageCondition": "Store in a cool, dry place",
-    "productType": "Bakery Item",
+    "productType": "Biscuit",
     "vegetarian": true
   },
   {
@@ -101,7 +101,7 @@ export const products = [
     "weight": "50-150 grams",
     "shelfLife": "30-45 Days",
     "storageCondition": "Store in a cool, dry place",
-    "productType": "Bakery Item",
+    "productType": "Biscuit",
     "vegetarian": true
   },
   {
@@ -356,7 +356,7 @@ export const products = [
     "weight": "50-150 grams",
     "shelfLife": "7-10 Days",
     "storageCondition": "Store in a cool, dry place",
-    "productType": "Bakery Item",
+    "productType": "Cake",
     "vegetarian": true
   },
   {
@@ -371,7 +371,7 @@ export const products = [
     "weight": "50-150 grams",
     "shelfLife": "7-10 Days",
     "storageCondition": "Store in a cool, dry place",
-    "productType": "Bakery Item",
+    "productType": "Cake",
     "vegetarian": true
   },
   {
@@ -386,7 +386,7 @@ export const products = [
     "weight": "50-150 grams",
     "shelfLife": "7-10 Days",
     "storageCondition": "Store in a cool, dry place",
-    "productType": "Bakery Item",
+    "productType": "Cake",
     "vegetarian": true
   },
   {
@@ -401,7 +401,7 @@ export const products = [
     "weight": "50-150 grams",
     "shelfLife": "7-10 Days",
     "storageCondition": "Store in a cool, dry place",
-    "productType": "Bakery Item",
+    "productType": "Cake",
     "vegetarian": true
   },
   {
@@ -416,7 +416,7 @@ export const products = [
     "weight": "50-150 grams",
     "shelfLife": "7-10 Days",
     "storageCondition": "Store in a cool, dry place",
-    "productType": "Bakery Item",
+    "productType": "Cake",
     "vegetarian": true
   },
   {
@@ -431,7 +431,7 @@ export const products = [
     "weight": "50-150 grams",
     "shelfLife": "7-10 Days",
     "storageCondition": "Store in a cool, dry place",
-    "productType": "Bakery Item",
+    "productType": "Cake",
     "vegetarian": true
   },
   {
@@ -446,7 +446,7 @@ export const products = [
     "weight": "50-150 grams",
     "shelfLife": "7-10 Days",
     "storageCondition": "Store in a cool, dry place",
-    "productType": "Bakery Item",
+    "productType": "Cake",
     "vegetarian": true
   },
   {
@@ -461,7 +461,7 @@ export const products = [
     "weight": "50-150 grams",
     "shelfLife": "7-10 Days",
     "storageCondition": "Store in a cool, dry place",
-    "productType": "Bakery Item",
+    "productType": "Cake",
     "vegetarian": true
   },
   {
@@ -476,7 +476,7 @@ export const products = [
     "weight": "50-150 grams",
     "shelfLife": "7-10 Days",
     "storageCondition": "Store in a cool, dry place",
-    "productType": "Bakery Item",
+    "productType": "Cake",
     "vegetarian": true
   },
   {
@@ -491,7 +491,7 @@ export const products = [
     "weight": "50-150 grams",
     "shelfLife": "30 Days",
     "storageCondition": "Store in a cool, dry place",
-    "productType": "Bakery Item",
+    "productType": "Cake",
     "vegetarian": true
   },
   {
@@ -506,7 +506,7 @@ export const products = [
     "weight": "50-150 grams",
     "shelfLife": "7-10 Days",
     "storageCondition": "Store in a cool, dry place",
-    "productType": "Bakery Item",
+    "productType": "Cake",
     "vegetarian": true
   },
   {
@@ -521,7 +521,7 @@ export const products = [
     "weight": "50-150 grams",
     "shelfLife": "7-10 Days",
     "storageCondition": "Store in a cool, dry place",
-    "productType": "Bakery Item",
+    "productType": "Cake",
     "vegetarian": true
   },
   {
@@ -536,7 +536,7 @@ export const products = [
     "weight": "50-150 grams",
     "shelfLife": "7-10 Days",
     "storageCondition": "Store in a cool, dry place",
-    "productType": "Bakery Item",
+    "productType": "Cake",
     "vegetarian": true
   },
   {
@@ -551,7 +551,7 @@ export const products = [
     "weight": "50-150 grams",
     "shelfLife": "7-10 Days",
     "storageCondition": "Store in a cool, dry place",
-    "productType": "Bakery Item",
+    "productType": "Cake",
     "vegetarian": true
   },
   {
@@ -566,7 +566,7 @@ export const products = [
     "weight": "50-150 grams",
     "shelfLife": "7-10 Days",
     "storageCondition": "Store in a cool, dry place",
-    "productType": "Bakery Item",
+    "productType": "Cake",
     "vegetarian": true
   },
   {
@@ -581,7 +581,7 @@ export const products = [
     "weight": "50-150 grams",
     "shelfLife": "7-10 Days",
     "storageCondition": "Store in a cool, dry place",
-    "productType": "Bakery Item",
+    "productType": "Cake",
     "vegetarian": true
   },
   {
@@ -596,7 +596,7 @@ export const products = [
     "weight": "50-150 grams",
     "shelfLife": "15-30 Days",
     "storageCondition": "Store in a cool, dry place",
-    "productType": "Bakery Item",
+    "productType": "Puff",
     "vegetarian": true
   },
   {
@@ -611,7 +611,7 @@ export const products = [
     "weight": "50-150 grams",
     "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
-    "productType": "Bakery Item",
+    "productType": "Puff",
     "vegetarian": false
   },
   {
@@ -626,7 +626,7 @@ export const products = [
     "weight": "50-150 grams",
     "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
-    "productType": "Bakery Item",
+    "productType": "Puff",
     "vegetarian": false
   },
   {
@@ -641,7 +641,7 @@ export const products = [
     "weight": "50-150 grams",
     "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
-    "productType": "Bakery Item",
+    "productType": "Puff",
     "vegetarian": false
   },
   {
@@ -656,7 +656,7 @@ export const products = [
     "weight": "50-150 grams",
     "shelfLife": "15-30 Days",
     "storageCondition": "Store in a cool, dry place",
-    "productType": "Bakery Item",
+    "productType": "Puff",
     "vegetarian": true
   },
   {
@@ -671,7 +671,7 @@ export const products = [
     "weight": "50-150 grams",
     "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
-    "productType": "Bakery Item",
+    "productType": "Puff",
     "vegetarian": true
   },
   {
@@ -686,7 +686,7 @@ export const products = [
     "weight": "50-150 grams",
     "shelfLife": "7-10 Days",
     "storageCondition": "Store in a cool, dry place",
-    "productType": "Bakery Item",
+    "productType": "Cake",
     "vegetarian": true
   },
   {
