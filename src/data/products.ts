@@ -150,18 +150,18 @@ export const products = [
     "vegetarian": true
   },
   {
-    "id": "parotta-ready-to-cook-breakfast",
-    "slug": "parotta-ready-to-cook-breakfast",
-    "name": "Parotta Ready to Cook",
+    "id": "parotta",
+    "slug": "parotta",
+    "name": "Parotta",
     "categoryId": "breakfast-products",
-    "description": "Delicious ready to cook Parotta.",
-    "fullDescription": "Enjoy our delicious Parotta, perfectly prepared and ready for you to cook at home.",
-    "image": "/images/products/parotta.webp",
+    "description": "Freshly prepared Parotta by Malabar Bakery.",
+    "fullDescription": "Enjoy our delicious flaky Parotta, made with the finest ingredients to guarantee the highest quality and taste.",
+    "image": "/images/products/parotta-breakfast.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
     "shelfLife": "Varies",
-    "storageCondition": "Keep Frozen",
-    "productType": "Ready To Cook",
+    "storageCondition": "Store in a cool, dry place",
+    "productType": "Breakfast Item",
     "vegetarian": true
   },
   {
