@@ -22,7 +22,7 @@ export default function Hero() {
     video.muted = true;
     video.defaultMuted = true;
     video.playsInline = true;
-    video.loop = true;
+    video.loop = false;
 
     const playVideo = () => {
       setIsVideoLoaded(true);
@@ -103,9 +103,11 @@ export default function Hero() {
           src={videoSrc}
           autoPlay
           muted
-          loop
           playsInline
           preload="auto"
+          onEnded={(e) => {
+            e.currentTarget.pause();
+          }}
           tabIndex={-1}
           aria-hidden="true"
           className="w-full h-full object-cover object-center pointer-events-none select-none"
