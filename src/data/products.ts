@@ -612,7 +612,7 @@ export const products = [
     "shelfLife": "Varies",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
-    "vegetarian": true
+    "vegetarian": false
   },
   {
     "id": "chicken-puff",
@@ -627,7 +627,7 @@ export const products = [
     "shelfLife": "Varies",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
-    "vegetarian": true
+    "vegetarian": false
   },
   {
     "id": "egg-puff",
@@ -642,7 +642,7 @@ export const products = [
     "shelfLife": "Varies",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
-    "vegetarian": true
+    "vegetarian": false
   },
   {
     "id": "samosa-khari",
@@ -1017,7 +1017,7 @@ export const products = [
     "shelfLife": "Varies",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Sandwich",
-    "vegetarian": true
+    "vegetarian": false
   },
   {
     "id": "shawarma-sandwich",
