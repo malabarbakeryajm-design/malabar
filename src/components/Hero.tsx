@@ -6,7 +6,6 @@ import Image from "next/image";
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-  const [isVideoEnded, setIsVideoEnded] = useState(false);
   const [videoSrc, setVideoSrc] = useState("/videos/hero-scrub-fast.mp4");
 
   useEffect(() => {
@@ -108,7 +107,6 @@ export default function Hero() {
           preload="auto"
           onEnded={(e) => {
             e.currentTarget.pause();
-            setIsVideoEnded(true);
           }}
           tabIndex={-1}
           aria-hidden="true"
@@ -116,25 +114,9 @@ export default function Hero() {
         />
       </div>
 
-      {/* Crisp Final Logo Frame (Shown and held once video ends) */}
-      <div
-        className={`absolute inset-0 w-full h-full z-[2] transition-opacity duration-500 pointer-events-none ${
-          isVideoEnded ? "opacity-100" : "opacity-0"
-        }`}
-      >
-        <Image
-          src="/images/hero-end-frame.webp"
-          alt="Malabar Bakery"
-          fill
-          priority
-          className="object-cover object-center"
-          sizes="100vw"
-        />
-      </div>
-
       {/* Subtle Cinematic Vignette */}
-      <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/75 via-transparent to-brand-dark/40 pointer-events-none z-[3]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_55%,rgba(26,17,14,0.45)_100%)] pointer-events-none z-[3]" />
+      <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/75 via-transparent to-brand-dark/40 pointer-events-none z-[2]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_55%,rgba(26,17,14,0.45)_100%)] pointer-events-none z-[2]" />
     </section>
   );
 }
