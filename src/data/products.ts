@@ -116,7 +116,7 @@ export const products = [
     "weight": "50-150 grams",
     "shelfLife": "Varies",
     "storageCondition": "Store in a cool, dry place",
-    "productType": "Bakery Item",
+    "productType": "Breakfast Item",
     "vegetarian": true
   },
   {
@@ -131,7 +131,7 @@ export const products = [
     "weight": "50-150 grams",
     "shelfLife": "Varies",
     "storageCondition": "Store in a cool, dry place",
-    "productType": "Bakery Item",
+    "productType": "Breakfast Item",
     "vegetarian": true
   },
   {
@@ -146,7 +146,7 @@ export const products = [
     "weight": "50-150 grams",
     "shelfLife": "Varies",
     "storageCondition": "Store in a cool, dry place",
-    "productType": "Bakery Item",
+    "productType": "Breakfast Item",
     "vegetarian": true
   },
   {
@@ -176,7 +176,7 @@ export const products = [
     "weight": "50-150 grams",
     "shelfLife": "Varies",
     "storageCondition": "Store in a cool, dry place",
-    "productType": "Bakery Item",
+    "productType": "Breakfast Item",
     "vegetarian": true
   },
   {
