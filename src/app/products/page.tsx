@@ -49,7 +49,7 @@ export default function ProductsPage() {
               href={`/products/category/${category.id}`}
               className="group block"
             >
-              <div className="relative aspect-square mb-6 overflow-hidden bg-brand-cream border border-brand-text/5 shadow-sm">
+              <div className="relative aspect-[4/5] mb-6 overflow-hidden bg-brand-cream border border-brand-text/5 shadow-sm rounded-md">
                 {category.image ? (
                   <Image 
                     src={category.image}
