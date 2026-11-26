@@ -43,7 +43,7 @@ export default function ProductsPage() {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
-          {categories.filter(c => c.id !== "all").map((category) => (
+          {categories.filter(c => c.id !== "all").map((category, idx) => (
             <Link 
               key={category.id}
               href={`/products/category/${category.id}`}
@@ -55,6 +55,8 @@ export default function ProductsPage() {
                     src={category.image}
                     alt={category.name}
                     fill
+                    priority={idx < 6}
+                    loading="eager"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   />

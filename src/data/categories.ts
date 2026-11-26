@@ -5,7 +5,6 @@ export const categories = [
   { id: "breakfast-products", name: "Breakfast Products", description: "Start your day with our authentic breakfast range.", image: "/images/categories/breakfast-cover.webp" },
   { id: "sandwiches", name: "Sandwiches", description: "Freshly prepared and ready to eat.", image: "/images/categories/sandwiches-cover.webp" },
   { id: "buns", name: "Buns", description: "Soft, fluffy, and freshly baked.", image: "/images/categories/buns-rolls-pastries-cover.webp" },
-  { id: "rolls", name: "Rolls", description: "Deliciously soft rolls for every occasion.", image: "/images/categories/buns-rolls-pastries-cover.webp" },
   { id: "pastries", name: "Pastries", description: "Delicate and rich, crafted for celebrations.", image: "/images/categories/buns-rolls-pastries-cover.webp" },
   { id: "puffs", name: "Puffs", description: "Flaky, golden puffs with savory fillings.", image: "/images/categories/puffs-cover.webp" },
   { id: "biscuits", name: "Biscuits", description: "Crispy, buttery, and perfect for your tea.", image: "/images/categories/biscuits-cover.webp" },

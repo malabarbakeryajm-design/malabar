@@ -45,13 +45,24 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
       
       <div className="max-w-7xl mx-auto px-6 py-12 md:py-24 relative z-10">
         
-        <div className="mb-12">
+        <div className="mb-12 flex flex-wrap items-center gap-4 text-xs uppercase tracking-widest text-brand-secondary">
           <Link 
-            href="/products" 
-            className="text-xs uppercase tracking-widest text-brand-secondary hover:text-brand-gold transition-colors"
+            href={category ? `/products/category/${category.id}` : "/products"} 
+            className="hover:text-brand-gold transition-colors font-medium"
           >
-            ← Back to Products
+            ← Back to {category ? category.name : "Products"}
           </Link>
+          {category && (
+            <>
+              <span className="text-brand-text/30">/</span>
+              <Link 
+                href="/products" 
+                className="hover:text-brand-gold transition-colors"
+              >
+                All Categories
+              </Link>
+            </>
+          )}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24">

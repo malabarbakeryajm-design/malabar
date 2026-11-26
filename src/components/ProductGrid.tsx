@@ -12,7 +12,7 @@ export default function ProductGrid() {
       {displayCategories.map((category) => (
         <Link 
           key={category.id} 
-          href={`/products?category=${category.id}`}
+          href={`/products/category/${category.id}`}
           className="group block"
         >
           <div className="relative aspect-[3/4] mb-6 overflow-hidden bg-brand-cream">

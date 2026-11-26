@@ -9,6 +9,9 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
   if (resolvedParams.categoryId === "snacks") {
     redirect("/products/category/south-indian-snacks");
   }
+  if (resolvedParams.categoryId === "rolls") {
+    redirect("/products");
+  }
   const currentCategory = categories.find(c => c.id === resolvedParams.categoryId);
   
   if (!currentCategory) {
@@ -60,7 +63,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-12">
           {filteredProducts.length > 0 ? (
-            filteredProducts.map((product) => (
+            filteredProducts.map((product, idx) => (
               <Link 
                 key={product.id}
                 href={`/products/${product.slug}`}
@@ -72,6 +75,8 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
                       src={product.image}
                       alt={product.name}
                       fill
+                      priority={idx < 4}
+                      loading="eager"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                       className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     />

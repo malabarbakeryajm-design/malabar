@@ -48,7 +48,6 @@ export default function Header() {
         { name: "Breakfast Products", href: "/products/category/breakfast-products" },
         { name: "Sandwiches", href: "/products/category/sandwiches" },
         { name: "Buns", href: "/products/category/buns" },
-        { name: "Rolls", href: "/products/category/rolls" },
         { name: "Pastries", href: "/products/category/pastries" },
         { name: "Puffs", href: "/products/category/puffs" },
         { name: "Biscuits", href: "/products/category/biscuits" },

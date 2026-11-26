@@ -9,7 +9,7 @@ export const products = [
     "image": "/images/products/badam-biscuit.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "30-45 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
     "vegetarian": true
@@ -24,7 +24,7 @@ export const products = [
     "image": "/images/products/choco-biscuit.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "30-45 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
     "vegetarian": true
@@ -39,7 +39,7 @@ export const products = [
     "image": "/images/products/coconut-jam-biscuit.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "30-45 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
     "vegetarian": true
@@ -54,7 +54,7 @@ export const products = [
     "image": "/images/products/milk-biscuit.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "30-45 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
     "vegetarian": true
@@ -69,7 +69,7 @@ export const products = [
     "image": "/images/products/peanut-biscuit.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "30-45 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
     "vegetarian": true
@@ -84,7 +84,7 @@ export const products = [
     "image": "/images/products/semiya-biscuit.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "30-45 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
     "vegetarian": true
@@ -99,7 +99,7 @@ export const products = [
     "image": "/images/products/spicy-biscuit-with-cornflakes.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "30-45 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
     "vegetarian": true
@@ -114,7 +114,7 @@ export const products = [
     "image": "/images/products/dosa.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Breakfast Item",
     "vegetarian": true
@@ -129,7 +129,7 @@ export const products = [
     "image": "/images/products/idiyappam.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Breakfast Item",
     "vegetarian": true
@@ -144,7 +144,7 @@ export const products = [
     "image": "/images/products/idly.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Breakfast Item",
     "vegetarian": true
@@ -159,7 +159,7 @@ export const products = [
     "image": "/images/products/parotta-breakfast.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Breakfast Item",
     "vegetarian": true
@@ -174,7 +174,7 @@ export const products = [
     "image": "/images/products/vellappam.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Breakfast Item",
     "vegetarian": true
@@ -189,7 +189,7 @@ export const products = [
     "image": "/images/products/butter-bun.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "3-4 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
     "vegetarian": true
@@ -204,7 +204,7 @@ export const products = [
     "image": "/images/products/cream-bun.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "3-4 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
     "vegetarian": true
@@ -219,7 +219,7 @@ export const products = [
     "image": "/images/products/cream-finger-rolls.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "3-4 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
     "vegetarian": true
@@ -234,7 +234,7 @@ export const products = [
     "image": "/images/products/finger-rolls.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "3-4 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
     "vegetarian": true
@@ -264,7 +264,7 @@ export const products = [
     "image": "/images/products/fruit-bun.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "3-4 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
     "vegetarian": true
@@ -279,7 +279,7 @@ export const products = [
     "image": "/images/products/masala-bun.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "3-4 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
     "vegetarian": true
@@ -294,7 +294,7 @@ export const products = [
     "image": "/images/products/plain-buns.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "3-4 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
     "vegetarian": true
@@ -339,7 +339,7 @@ export const products = [
     "image": "/images/products/zaatar-bun.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "3-4 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
     "vegetarian": true
@@ -354,7 +354,7 @@ export const products = [
     "image": "/images/products/alfain-toast.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "7-10 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
     "vegetarian": true
@@ -369,7 +369,7 @@ export const products = [
     "image": "/images/products/banana-cake.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "7-10 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
     "vegetarian": true
@@ -384,7 +384,7 @@ export const products = [
     "image": "/images/products/chocolate-slice-cake.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "7-10 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
     "vegetarian": true
@@ -399,7 +399,7 @@ export const products = [
     "image": "/images/products/classic-marble-cake.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "7-10 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
     "vegetarian": true
@@ -414,7 +414,7 @@ export const products = [
     "image": "/images/products/cupcake-vanilla.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "7-10 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
     "vegetarian": true
@@ -429,7 +429,7 @@ export const products = [
     "image": "/images/products/fried-paal-cake.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "7-10 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
     "vegetarian": true
@@ -444,7 +444,7 @@ export const products = [
     "image": "/images/products/jam-swiss-cake.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "7-10 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
     "vegetarian": true
@@ -459,7 +459,7 @@ export const products = [
     "image": "/images/products/jam-swiss-roll.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "7-10 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
     "vegetarian": true
@@ -474,7 +474,7 @@ export const products = [
     "image": "/images/products/pineapple-cake.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "7-10 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
     "vegetarian": true
@@ -489,7 +489,7 @@ export const products = [
     "image": "/images/products/plum-cake-official.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "30 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
     "vegetarian": true
@@ -504,7 +504,7 @@ export const products = [
     "image": "/images/products/pound-cake.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "7-10 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
     "vegetarian": true
@@ -519,7 +519,7 @@ export const products = [
     "image": "/images/products/pudding-cake.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "7-10 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
     "vegetarian": true
@@ -534,7 +534,7 @@ export const products = [
     "image": "/images/products/square-cup-cake.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "7-10 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
     "vegetarian": true
@@ -549,7 +549,7 @@ export const products = [
     "image": "/images/products/tea-cake.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "7-10 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
     "vegetarian": true
@@ -564,7 +564,7 @@ export const products = [
     "image": "/images/products/toast.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "7-10 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
     "vegetarian": true
@@ -579,7 +579,7 @@ export const products = [
     "image": "/images/products/vanilla-slice-cake.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "7-10 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
     "vegetarian": true
@@ -594,7 +594,7 @@ export const products = [
     "image": "/images/products/baker-khari.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "15-30 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
     "vegetarian": true
@@ -609,7 +609,7 @@ export const products = [
     "image": "/images/products/chicken-garlic-puff.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
     "vegetarian": false
@@ -624,7 +624,7 @@ export const products = [
     "image": "/images/products/chicken-puff.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
     "vegetarian": false
@@ -639,7 +639,7 @@ export const products = [
     "image": "/images/products/egg-puff.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
     "vegetarian": false
@@ -654,7 +654,7 @@ export const products = [
     "image": "/images/products/samosa-khari.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "15-30 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
     "vegetarian": true
@@ -669,7 +669,7 @@ export const products = [
     "image": "/images/products/vegetable-puff.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
     "vegetarian": true
@@ -684,7 +684,7 @@ export const products = [
     "image": "/images/products/cup-cake-chocolate.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "7-10 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Bakery Item",
     "vegetarian": true
@@ -699,7 +699,7 @@ export const products = [
     "image": "/images/products/aloo-samosapunjabi.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "90-180 Days (Frozen)",
     "storageCondition": "Keep Frozen",
     "productType": "Ready To Cook",
     "vegetarian": true
@@ -714,7 +714,7 @@ export const products = [
     "image": "/images/products/cheese-samosa-rtc.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "90-180 Days (Frozen)",
     "storageCondition": "Keep Frozen",
     "productType": "Ready To Cook",
     "vegetarian": true
@@ -729,7 +729,7 @@ export const products = [
     "image": "/images/products/chicken-cutlet.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "90-180 Days (Frozen)",
     "storageCondition": "Keep Frozen",
     "productType": "Ready To Cook",
     "vegetarian": false
@@ -744,7 +744,7 @@ export const products = [
     "image": "/images/products/chicken-samosa-rtc.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "90-180 Days (Frozen)",
     "storageCondition": "Keep Frozen",
     "productType": "Ready To Cook",
     "vegetarian": false
@@ -759,7 +759,7 @@ export const products = [
     "image": "/images/products/chicken-spring-roll-official.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "90-180 Days (Frozen)",
     "storageCondition": "Keep Frozen",
     "productType": "Ready To Cook",
     "vegetarian": false
@@ -774,7 +774,7 @@ export const products = [
     "image": "/images/products/parotta.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "90-180 Days (Frozen)",
     "storageCondition": "Keep Frozen",
     "productType": "Ready To Cook",
     "vegetarian": true
@@ -789,7 +789,7 @@ export const products = [
     "image": "/images/products/vegetable-samosa-rtc.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "90-180 Days (Frozen)",
     "storageCondition": "Keep Frozen",
     "productType": "Ready To Cook",
     "vegetarian": true
@@ -804,7 +804,7 @@ export const products = [
     "image": "/images/products/aloo-samosa.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Snack",
     "vegetarian": true
@@ -819,7 +819,7 @@ export const products = [
     "image": "/images/products/cheese-samosa.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Snack",
     "vegetarian": true
@@ -834,7 +834,7 @@ export const products = [
     "image": "/images/products/chicken-samosa.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Snack",
     "vegetarian": false
@@ -849,7 +849,7 @@ export const products = [
     "image": "/images/products/chicken-spring-roll-official.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Snack",
     "vegetarian": false
@@ -864,7 +864,7 @@ export const products = [
     "image": "/images/products/keema-samosa.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Snack",
     "vegetarian": false
@@ -879,7 +879,7 @@ export const products = [
     "image": "/images/products/vegetable-samosa.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Snack",
     "vegetarian": true
@@ -894,7 +894,7 @@ export const products = [
     "image": "/images/products/chicken-club-sandwich.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Sandwich",
     "vegetarian": false
@@ -909,7 +909,7 @@ export const products = [
     "image": "/images/products/chicken-sandwich.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Sandwich",
     "vegetarian": false
@@ -924,7 +924,7 @@ export const products = [
     "image": "/images/products/chicken-tandoori-sandwich.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Sandwich",
     "vegetarian": false
@@ -939,7 +939,7 @@ export const products = [
     "image": "/images/products/chicken-tikka-club-sandwich.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Sandwich",
     "vegetarian": false
@@ -954,7 +954,7 @@ export const products = [
     "image": "/images/products/chicken-tikka-sandwich.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Sandwich",
     "vegetarian": false
@@ -969,7 +969,7 @@ export const products = [
     "image": "/images/products/egg-club-sandwich.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Sandwich",
     "vegetarian": false
@@ -984,7 +984,7 @@ export const products = [
     "image": "/images/products/egg-sandwich.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Sandwich",
     "vegetarian": false
@@ -999,7 +999,7 @@ export const products = [
     "image": "/images/products/hot-dog-sandwich.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Sandwich",
     "vegetarian": false
@@ -1014,7 +1014,7 @@ export const products = [
     "image": "/images/products/parotta-tikka-sandwich.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Sandwich",
     "vegetarian": false
@@ -1029,7 +1029,7 @@ export const products = [
     "image": "/images/products/shawarma-sandwich.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Sandwich",
     "vegetarian": false
@@ -1044,7 +1044,7 @@ export const products = [
     "image": "/images/products/vegetable-club-sandwich.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Sandwich",
     "vegetarian": true
@@ -1059,7 +1059,7 @@ export const products = [
     "image": "/images/products/vegetable-sandwich.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Sandwich",
     "vegetarian": true
@@ -1074,7 +1074,7 @@ export const products = [
     "image": "/images/products/chicken-cutlet-ready-to-eat.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Snack",
     "vegetarian": false
@@ -1089,7 +1089,7 @@ export const products = [
     "image": "/images/products/kaja.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "15-30 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Snack",
     "vegetarian": true
@@ -1104,7 +1104,7 @@ export const products = [
     "image": "/images/products/kalathappam.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Snack",
     "vegetarian": true
@@ -1119,7 +1119,7 @@ export const products = [
     "image": "/images/products/khajoor.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "15-30 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Snack",
     "vegetarian": true
@@ -1134,7 +1134,7 @@ export const products = [
     "image": "/images/products/koonthi.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "15-30 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Snack",
     "vegetarian": true
@@ -1149,7 +1149,7 @@ export const products = [
     "image": "/images/products/namkeen-mixture.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "15-30 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Snack",
     "vegetarian": true
@@ -1164,7 +1164,7 @@ export const products = [
     "image": "/images/products/parippu-vada-dal.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Snack",
     "vegetarian": true
@@ -1179,7 +1179,7 @@ export const products = [
     "image": "/images/products/pathil-fried-pathiri.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Snack",
     "vegetarian": true
@@ -1194,7 +1194,7 @@ export const products = [
     "image": "/images/products/plain-neyyappam.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Snack",
     "vegetarian": true
@@ -1209,7 +1209,7 @@ export const products = [
     "image": "/images/products/pottiyappam-salty-spicy.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Snack",
     "vegetarian": true
@@ -1224,7 +1224,7 @@ export const products = [
     "image": "/images/products/sweet-bonda.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Snack",
     "vegetarian": true
@@ -1239,7 +1239,7 @@ export const products = [
     "image": "/images/products/ullivada-onion-vada.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Snack",
     "vegetarian": true
@@ -1254,7 +1254,7 @@ export const products = [
     "image": "/images/products/unniyappam.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Snack",
     "vegetarian": true
@@ -1269,7 +1269,7 @@ export const products = [
     "image": "/images/products/uzhunnu-vada-medu-vada.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "1-2 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Snack",
     "vegetarian": true
@@ -1284,7 +1284,7 @@ export const products = [
     "image": "/images/products/burfi.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "5-7 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Sweet",
     "vegetarian": true
@@ -1299,7 +1299,7 @@ export const products = [
     "image": "/images/products/coconut-laddu.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "5-7 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Sweet",
     "vegetarian": true
@@ -1314,7 +1314,7 @@ export const products = [
     "image": "/images/products/cream-gulab-jamun.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "5-7 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Sweet",
     "vegetarian": true
@@ -1329,7 +1329,7 @@ export const products = [
     "image": "/images/products/gulab-jamun.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "5-7 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Sweet",
     "vegetarian": true
@@ -1344,7 +1344,7 @@ export const products = [
     "image": "/images/products/jalebi.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "5-7 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Sweet",
     "vegetarian": true
@@ -1359,7 +1359,7 @@ export const products = [
     "image": "/images/products/laddu.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "5-7 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Sweet",
     "vegetarian": true
@@ -1374,7 +1374,7 @@ export const products = [
     "image": "/images/products/mysore-pak.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "5-7 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Sweet",
     "vegetarian": true
@@ -1389,7 +1389,7 @@ export const products = [
     "image": "/images/products/rasagula.webp",
     "packSize": "1 Pack",
     "weight": "50-150 grams",
-    "shelfLife": "Varies",
+    "shelfLife": "5-7 Days",
     "storageCondition": "Store in a cool, dry place",
     "productType": "Sweet",
     "vegetarian": true
@@ -1453,36 +1453,6 @@ export const products = [
     "storageCondition": "Store in a cool, dry place or refrigerate",
     "productType": "Breakfast Item",
     "vegetarian": true
-  },
-  {
-    "id": "chicken-spring-roll",
-    "slug": "chicken-spring-roll",
-    "name": "Chicken Spring Roll",
-    "categoryId": "rolls",
-    "description": "Crispy golden pastry roll generously stuffed with savory spiced minced chicken.",
-    "fullDescription": "Enjoy our signature Chicken Spring Roll, rolled to perfection in delicate crisp pastry and packed with authentic savory chicken filling and fresh vegetables.",
-    "image": "/images/products/chicken-spring-roll-official.webp",
-    "packSize": "1 Pack",
-    "weight": "100-200 grams",
-    "shelfLife": "Varies",
-    "storageCondition": "Store in a cool, dry place",
-    "productType": "Roll",
-    "vegetarian": false
-  },
-  {
-    "id": "shawarma-roll",
-    "slug": "shawarma-roll",
-    "name": "Shawarma Roll",
-    "categoryId": "rolls",
-    "description": "Juicy, marinated chicken shawarma wrapped in freshly baked soft bread.",
-    "fullDescription": "Delicious authentic Shawarma Roll wrapped with tender marinated chicken, garlic sauce, and crisp accompaniments for an authentic bakery roll experience.",
-    "image": "/images/products/shawarma-sandwich.webp",
-    "packSize": "1 Piece",
-    "weight": "150-250 grams",
-    "shelfLife": "1-2 Days",
-    "storageCondition": "Store in a cool, dry place or refrigerate",
-    "productType": "Roll",
-    "vegetarian": false
   },
   {
     "id": "parotta-fatayer",
